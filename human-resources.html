@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human Resources | Hitech Construction Company Limited</title>
+  <meta name="description" content="Learn about Hitech Construction Company Limited's human resources team and leadership capacity.">
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = storedTheme || "auto";
+      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
+      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
+      document.documentElement.dataset.themePreference = theme;
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/vendor-style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="human-resources" data-nav-parent="about">
+  <div data-include="/partials/site-header.html"></div>
+
+  <main>
+    <section class="resource-hero">
+      <div class="container">
+        <div class="resource-hero__frame">
+          <div class="resource-hero__media">
+            <img src="/assets/images/about/14.jpg" alt="Hitech team members during a meeting" class="resource-hero__image" loading="lazy" decoding="async">
+          </div>
+
+          <article class="resource-hero__card">
+            <h1 class="resource-hero__title">Human Resources</h1>
+            <div class="resource-hero__meta" aria-label="Article details">
+              <span>Hitech Construction Company</span>
+              <span class="resource-hero__meta-divider" aria-hidden="true"></span>
+              <span>2 mins read</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-article">
+      <div class="container">
+        <div class="resource-article__content">
+          <h2 class="resource-article__title">Human Resources</h2>
+          <p class="resource-article__text">
+            Our greatest asset is our people. Hitech's management team is made up of a crop of seasoned professionals, with diverse skills in various backgrounds, as well as depth of experience gathered from national and international institutions.
+          </p>
+          <p class="resource-article__text">
+            Over the years, this management team have brought their knowledge, experience and leadership to provide the expertise, professionalism and innovative approaches fundamental to the execution of successful projects. We have a record of pioneering innovations in the Nigerian construction sector.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/site-footer.html"></div>
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

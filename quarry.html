@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quarry | Hitech Construction Company Limited</title>
+  <meta name="description" content="Explore Hitech Construction Company Limited's quarry operations, process stages, and locations.">
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = storedTheme || "auto";
+      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
+      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
+      document.documentElement.dataset.themePreference = theme;
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/vendor-style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="quarry">
+  <div data-include="/partials/site-header.html"></div>
+
+  <main>
+    <section class="quarry-intro">
+      <div class="container">
+        <div class="quarry-intro__content">
+          <h1 class="quarry-intro__title">Hitech Quarry</h1>
+          <p class="quarry-intro__text">
+            The granite rock deposits within our quarry are distinguished by their high specific gravity and solidity compared to those in the southeastern region of Nigeria. These areas are part of the crystalline rocks of the Nigeria Pre-Cambrian Basement complex. The granitic rock throughout our quarry area forms massive outcroppings at higher elevations above sea level.
+          </p>
+        </div>
+
+        <div class="quarry-panels">
+          <article class="quarry-panel quarry-panel--light">
+            <h2 class="quarry-panel__title">Commitment to Best Practices and Environmental Standards</h2>
+            <p class="quarry-panel__text">
+              At Hitech Construction Co. Ltd, we take pride in using the industry's best methods for blasting and aligning with all international standards in waste management, stakeholder engagement, and all other environmental and social requirements necessary for a quarry operation. We adhere to the Equator Principles and IFC Performance Standards, ensuring responsible and sustainable quarrying practices.
+            </p>
+          </article>
+
+          <article class="quarry-panel quarry-panel--dark">
+            <h2 class="quarry-panel__title">Stages in the Quarry Process</h2>
+            <ul class="quarry-panel__list" role="list">
+              <li>Drilling</li>
+              <li>Blasting</li>
+              <li>Loading from Blasting Surface</li>
+              <li>Crushing</li>
+              <li>Scaling / Selling Stage</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quarry-gallery">
+      <div class="container">
+        <div class="quarry-browse" aria-label="Quarry location filters">
+          <h2 class="quarry-browse__title">Browse by:</h2>
+          <div class="quarry-browse__actions" role="tablist" aria-label="Quarry locations">
+            <button class="quarry-browse__button" type="button" data-project-filter="all" aria-pressed="false">All Locations</button>
+            <button class="quarry-browse__button is-active" type="button" data-project-filter="nigeria" aria-pressed="true">Nigeria</button>
+          </div>
+        </div>
+
+        <div class="quarry-gallery__grid" data-projects-grid>
+          <article class="quarry-card" data-project-location="nigeria" tabindex="0">
+            <img src="/assets/images/conn/operations-1.JPG" alt="Hitech quarry equipment fleet in Abuja" class="quarry-card__image" loading="lazy" decoding="async">
+            <div class="quarry-card__overlay">
+              <span class="quarry-card__state">Abuja</span>
+              <span class="quarry-card__country">Nigeria</span>
+            </div>
+          </article>
+
+          <article class="quarry-card" data-project-location="nigeria" tabindex="0">
+            <img src="/assets/images/conn/home/6.JPG" alt="Hitech quarry excavation work in Ibadan" class="quarry-card__image" loading="lazy" decoding="async">
+            <div class="quarry-card__overlay">
+              <span class="quarry-card__state">Ibadan</span>
+              <span class="quarry-card__country">Nigeria</span>
+            </div>
+          </article>
+
+          <article class="quarry-card" data-project-location="nigeria" tabindex="0">
+            <img src="/assets/images/conn/plant.jpg" alt="Hitech quarry loading operation in Calabar" class="quarry-card__image" loading="lazy" decoding="async">
+            <div class="quarry-card__overlay">
+              <span class="quarry-card__state">Calabar</span>
+              <span class="quarry-card__country">Nigeria</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/site-footer.html"></div>
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

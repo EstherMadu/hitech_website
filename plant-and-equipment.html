@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitech Plant And Equipment | Hitech Construction Company Limited</title>
+  <meta name="description" content="Explore Hitech Construction Company Limited's plant and equipment operations.">
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = storedTheme || "auto";
+      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
+      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
+      document.documentElement.dataset.themePreference = theme;
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/vendor-style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="plant-equipment" data-nav-parent="about">
+  <div data-include="/partials/site-header.html"></div>
+
+  <main>
+    <section class="resource-hero">
+      <div class="container">
+        <div class="resource-hero__frame">
+          <div class="resource-hero__media">
+            <img src="/assets/images/conn/operations-1.JPG" alt="Hitech fleet of rollers and dump trucks" class="resource-hero__image resource-hero__image--plant" loading="lazy" decoding="async">
+          </div>
+
+          <article class="resource-hero__card">
+            <h1 class="resource-hero__title">Hitech Plant And Equipment</h1>
+            <div class="resource-hero__meta" aria-label="Article details">
+              <span>Hitech Construction Company</span>
+              <span class="resource-hero__meta-divider" aria-hidden="true"></span>
+              <span>9 min read</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-article resource-article--intro-only">
+      <div class="container">
+        <div class="resource-article__content">
+          <section class="resource-article__section" aria-labelledby="plant-equipment-title">
+            <h2 id="plant-equipment-title" class="resource-article__title">Hitech Plant And Equipment</h2>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/site-footer.html"></div>
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
