@@ -2,7 +2,7 @@
   --header-block-size: 98px;
   --site-primary: #bf2202;
   --site-primary-hover: #a41d01;
-  --site-header-bg: rgba(255, 255, 255, 0.96);
+  --site-header-bg: var(--site-body-bg);
   --site-header-border: rgba(24, 24, 24, 0.12);
   --site-body-bg: #f4f4f1;
   --site-text: #444d57;
@@ -203,6 +203,13 @@ h6,
   text-decoration: none;
 }
 
+.theme-toggle-btn {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.45rem;
+  padding: 0.45rem 0.55rem !important;
+}
+
 .theme-toggle-icon,
 .theme-option-icon,
 .report-icon {
@@ -219,8 +226,12 @@ h6,
   fill: currentColor;
 }
 
-.theme-toggle-btn {
-  padding: 0.45rem 0.55rem !important;
+.theme-toggle-label {
+  color: inherit;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .theme-menu {
@@ -230,6 +241,12 @@ h6,
 .theme-menu .dropdown-item {
   gap: 0.45rem;
   padding: 0.7rem 0.95rem;
+}
+
+.theme-option-label {
+  color: inherit;
+  display: inline-block;
+  line-height: 1.2;
 }
 
 .theme-menu .dropdown-item.active {
@@ -1759,6 +1776,14 @@ h6,
   color: var(--site-primary);
 }
 
+.operations-card__title--grey {
+  color: #687280;
+}
+
+.operations-card__title--grey-soft {
+  color: #c8ced8;
+}
+
 .operations-card__action {
   align-items: center;
   background: rgba(255, 255, 255, 0.08);
@@ -1924,8 +1949,16 @@ h6,
   max-width: 66rem;
 }
 
+.resource-article__section {
+  padding: 0;
+}
+
 .resource-article__section + .resource-article__section {
   margin-top: 1.65rem;
+}
+
+body[data-page="company-compliance"] .resource-article__section + .resource-article__section {
+  margin-top: 0.9rem;
 }
 
 .resource-article__subheading {
@@ -1971,6 +2004,11 @@ h6,
 
 .resource-article__ordered {
   margin-left: 1.25rem;
+}
+
+body[data-page="company-compliance"] .resource-article__list,
+body[data-page="company-compliance"] .resource-article__ordered {
+  margin-bottom: 0.9rem;
 }
 
 .resource-article__list li + li,
@@ -2022,6 +2060,18 @@ h6,
   object-fit: cover;
   object-position: center 38%;
   width: 100%;
+}
+
+.service-detail-hero__image--roadworks {
+  object-position: center 32%;
+}
+
+.service-detail-hero__image--water {
+  object-position: center 42%;
+}
+
+.service-detail-hero__image--land {
+  object-position: center 36%;
 }
 
 .service-detail-hero__promo {
@@ -2086,6 +2136,1896 @@ h6,
   font-size: 1.02rem;
   line-height: 1.55;
   margin: 0 0 0.95rem;
+}
+
+.roadworks-story__layout,
+.roadworks-focus__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.roadworks-story__layout {
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.92fr);
+}
+
+.roadworks-story__title,
+.roadworks-focus__title,
+.roadworks-updates__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.35vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.14;
+  margin: 0 0 1.15rem;
+}
+
+.roadworks-story__text,
+.roadworks-updates__text,
+.roadworks-service-card__text {
+  color: #4f5a69;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.roadworks-story__text {
+  margin: 0 0 1.15rem;
+}
+
+.roadworks-story__text--last,
+.roadworks-updates__text--last {
+  margin-bottom: 0;
+}
+
+.roadworks-story__gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roadworks-story__image-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.roadworks-story__image-card--offset {
+  margin-top: 2.1rem;
+}
+
+.roadworks-story__image {
+  aspect-ratio: 4 / 5.1;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.roadworks-service-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roadworks-service-card,
+.roadworks-updates__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+}
+
+.roadworks-service-card {
+  height: 100%;
+  padding: 1.65rem 1.45rem 1.55rem;
+}
+
+.roadworks-service-card__eyebrow,
+.roadworks-updates__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+}
+
+.roadworks-service-card__title {
+  color: #111827;
+  font-size: 1.34rem;
+  font-weight: 700;
+  line-height: 1.22;
+  margin: 0 0 0.8rem;
+}
+
+.roadworks-service-card__text {
+  margin: 0;
+}
+
+.roadworks-focus__layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+}
+
+.roadworks-focus__media,
+.roadworks-updates__panel-media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.roadworks-focus__image,
+.roadworks-updates__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.roadworks-focus__image {
+  aspect-ratio: 16 / 12.2;
+}
+
+.roadworks-focus__list {
+  margin-bottom: 1.2rem;
+}
+
+.roadworks-updates {
+  padding: 0 0 6rem;
+}
+
+.newsletter-card__form--stacked {
+  grid-template-columns: 1fr;
+}
+
+.newsletter-card__submit--wide {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  height: auto;
+  min-height: 3.25rem;
+  padding: 0.85rem 1.15rem;
+  width: 100%;
+}
+
+.roadworks-updates__image {
+  aspect-ratio: 16 / 8.8;
+}
+
+.roadworks-updates__panel-body {
+  padding: 2rem 2rem 2.15rem;
+}
+
+.roadworks-updates__text {
+  margin: 0 0 1.15rem;
+}
+
+.roadworks-updates__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.water-schemes-intro__layout,
+.water-schemes-approach__layout,
+.water-schemes-technology__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.water-schemes-intro__layout {
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+}
+
+.water-schemes-intro__eyebrow,
+.water-schemes-updates__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.water-schemes-intro__title,
+.water-schemes-updates__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.4vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 1.15rem;
+}
+
+.water-schemes-intro__stats {
+  display: grid;
+  gap: 1rem;
+}
+
+.water-schemes-stat {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  padding: 1.55rem 1.4rem;
+}
+
+.water-schemes-stat--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.08) 0%, #f3f4f6 100%);
+}
+
+.water-schemes-stat__value {
+  color: #111827;
+  display: block;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.water-schemes-stat__label,
+.water-schemes-service-card__text,
+.water-schemes-updates__text {
+  color: #4f5a69;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.water-schemes-approach__layout {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.water-schemes-approach__media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.water-schemes-approach__image {
+  aspect-ratio: 16 / 12.4;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.water-schemes-approach__highlights {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.water-schemes-service-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.water-schemes-service-card {
+  background: linear-gradient(180deg, #f5f6f7 0%, #eef1f3 100%);
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  height: 100%;
+  padding: 1.7rem 1.45rem 1.55rem;
+}
+
+.water-schemes-service-card__eyebrow,
+.water-schemes-assurance__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+}
+
+.water-schemes-service-card__title,
+.water-schemes-assurance__title {
+  color: #111827;
+  font-size: 1.36rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.water-schemes-technology__layout {
+  grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.98fr);
+}
+
+.water-schemes-technology__panel {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  display: grid;
+  gap: 1rem;
+  padding: 1.8rem;
+}
+
+.water-schemes-technology__item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1rem 1rem 1.05rem;
+}
+
+.water-schemes-technology__item p,
+.water-schemes-assurance__text {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.water-schemes-technology__item-title {
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+.water-schemes-assurance__layout {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.water-schemes-assurance__card {
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.8rem;
+}
+
+.water-schemes-assurance__card--dark {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  color: #ffffff;
+}
+
+.water-schemes-assurance__card--light {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  color: #4f5a69;
+}
+
+.water-schemes-updates {
+  padding: 0 0 6rem;
+}
+
+.water-schemes-updates__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.water-schemes-updates__media {
+  overflow: hidden;
+}
+
+.water-schemes-updates__image {
+  aspect-ratio: 16 / 8.9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.water-schemes-updates__body {
+  padding: 2rem 2rem 2.15rem;
+}
+
+.water-schemes-updates__text {
+  margin: 0 0 1.15rem;
+}
+
+.water-schemes-updates__text--last {
+  margin-bottom: 0;
+}
+
+.landworks-intro__layout,
+.landworks-approach__layout,
+.landworks-partnership__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.landworks-intro__layout {
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+}
+
+.landworks-intro__eyebrow,
+.landworks-updates__eyebrow,
+.landworks-service-card__eyebrow,
+.landworks-excellence__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.landworks-intro__title,
+.landworks-updates__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 1.15rem;
+}
+
+.landworks-intro__panel,
+.landworks-updates__panel {
+  border-radius: 14px;
+}
+
+.landworks-intro__panel {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  color: #ffffff;
+  padding: 2rem 1.8rem;
+}
+
+.landworks-intro__panel-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.landworks-intro__panel-text,
+.landworks-service-card__text,
+.landworks-excellence__text,
+.landworks-updates__text {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.landworks-approach__layout {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.landworks-approach__media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.landworks-approach__image {
+  aspect-ratio: 16 / 12.5;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.landworks-approach__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.landworks-service-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.landworks-service-card {
+  background: linear-gradient(180deg, #f5f6f7 0%, #eef1f3 100%);
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  height: 100%;
+  padding: 1.7rem 1.45rem 1.55rem;
+}
+
+.landworks-service-card__title,
+.landworks-excellence__title {
+  color: #111827;
+  font-size: 1.36rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.landworks-excellence__card--dark .landworks-excellence__title {
+  color: #c8ced8;
+}
+
+.landworks-service-card__text {
+  color: #4f5a69;
+}
+
+.landworks-excellence__layout {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.landworks-excellence__card {
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.8rem;
+}
+
+.landworks-excellence__card--dark {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  color: #ffffff;
+}
+
+.landworks-excellence__card--light {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  color: #4f5a69;
+}
+
+.landworks-partnership__layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.landworks-partnership__gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.landworks-partnership__image-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.landworks-partnership__image-card--offset {
+  margin-top: 2.15rem;
+}
+
+.landworks-partnership__image {
+  aspect-ratio: 4 / 5.2;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.landworks-updates {
+  padding: 0 0 6rem;
+}
+
+.landworks-updates__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  overflow: hidden;
+}
+
+.landworks-updates__media {
+  overflow: hidden;
+}
+
+.landworks-updates__image {
+  aspect-ratio: 16 / 8.9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.landworks-updates__body {
+  padding: 2rem 2rem 2.15rem;
+}
+
+.landworks-updates__text {
+  color: #4f5a69;
+  margin: 0 0 1.15rem;
+}
+
+.landworks-updates__text--last {
+  margin-bottom: 0;
+}
+
+.service-detail-hero__image--foam {
+  object-position: center 39%;
+}
+
+.foam-materials-intro__layout,
+.foam-materials-approach__layout,
+.foam-materials-performance__layout,
+.foam-materials-partnership__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.foam-materials-intro__layout {
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+}
+
+.foam-materials-intro__eyebrow,
+.foam-materials-service-card__eyebrow,
+.foam-materials-performance__eyebrow,
+.foam-materials-partnership__eyebrow,
+.foam-materials-updates__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.foam-materials-intro__title,
+.foam-materials-updates__title,
+.foam-materials-partnership__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 1.15rem;
+}
+
+.foam-materials-intro__panel {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 1.9rem 1.7rem;
+}
+
+.foam-materials-intro__panel-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.foam-materials-intro__panel-items {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.foam-materials-intro__panel-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.95rem 1rem 1rem;
+}
+
+.foam-materials-intro__panel-key {
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.foam-materials-intro__panel-text,
+.foam-materials-service-card__text,
+.foam-materials-performance__text,
+.foam-materials-updates__text {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.foam-materials-approach__layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+}
+
+.foam-materials-approach__media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.foam-materials-approach__image {
+  aspect-ratio: 16 / 12.4;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.foam-materials-approach__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.foam-materials-service-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.foam-materials-service-card {
+  background: linear-gradient(180deg, #f8f4f0 0%, #f1f3f5 100%);
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  height: 100%;
+  overflow: hidden;
+  padding: 1.7rem 1.45rem 1.55rem;
+  position: relative;
+}
+
+.foam-materials-service-card::before {
+  background: linear-gradient(90deg, rgba(191, 34, 2, 0.14) 0%, rgba(191, 34, 2, 0) 100%);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.foam-materials-service-card__title,
+.foam-materials-performance__title {
+  color: #111827;
+  font-size: 1.36rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.foam-materials-service-card__text {
+  color: #4f5a69;
+}
+
+.foam-materials-performance__layout {
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+}
+
+.foam-materials-performance__card {
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.8rem;
+}
+
+.foam-materials-performance__card--dark {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  color: #ffffff;
+}
+
+.foam-materials-performance__card--light {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  color: #4f5a69;
+}
+
+.foam-materials-partnership__layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.foam-materials-partnership__gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.foam-materials-partnership__image-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.foam-materials-partnership__image-card--offset {
+  margin-top: 2.15rem;
+}
+
+.foam-materials-partnership__image {
+  aspect-ratio: 4 / 5.2;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.foam-materials-updates {
+  padding: 0 0 6rem;
+}
+
+.foam-materials-updates__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.foam-materials-updates__media {
+  overflow: hidden;
+}
+
+.foam-materials-updates__image {
+  aspect-ratio: 16 / 8.9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.foam-materials-updates__body {
+  padding: 2rem 2rem 2.15rem;
+}
+
+.foam-materials-updates__text {
+  color: #4f5a69;
+  margin: 0 0 1.15rem;
+}
+
+.foam-materials-updates__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.service-detail-hero__image--recycling {
+  object-position: center 44%;
+}
+
+.recycling-roads-intro__layout,
+.recycling-roads-approach__layout,
+.recycling-roads-applications__layout,
+.recycling-roads-assurance__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.recycling-roads-intro__layout {
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+}
+
+.recycling-roads-intro__eyebrow,
+.recycling-roads-benefit-card__eyebrow,
+.recycling-roads-applications__eyebrow,
+.recycling-roads-assurance__eyebrow,
+.recycling-roads-updates__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.recycling-roads-intro__title,
+.recycling-roads-applications__title,
+.recycling-roads-updates__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 1.15rem;
+}
+
+.recycling-roads-intro__panel {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 1.9rem 1.7rem;
+}
+
+.recycling-roads-intro__panel-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.recycling-roads-intro__panel-items {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.recycling-roads-intro__panel-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.95rem 1rem 1rem;
+}
+
+.recycling-roads-intro__panel-key {
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.recycling-roads-intro__panel-text,
+.recycling-roads-benefit-card__text,
+.recycling-roads-applications__text,
+.recycling-roads-application-card__text,
+.recycling-roads-assurance__text,
+.recycling-roads-updates__text {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.recycling-roads-approach__layout {
+  grid-template-columns: minmax(0, 0.97fr) minmax(0, 1.03fr);
+}
+
+.recycling-roads-approach__media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.recycling-roads-approach__image {
+  aspect-ratio: 16 / 12.4;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.recycling-roads-approach__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.recycling-roads-benefit-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recycling-roads-benefit-card {
+  background: linear-gradient(180deg, #f7f4ee 0%, #f2f5f7 100%);
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  height: 100%;
+  overflow: hidden;
+  padding: 1.7rem 1.45rem 1.55rem;
+  position: relative;
+}
+
+.recycling-roads-benefit-card::before {
+  background: linear-gradient(90deg, rgba(191, 34, 2, 0.16) 0%, rgba(191, 34, 2, 0) 100%);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.recycling-roads-benefit-card__title,
+.recycling-roads-application-card__title,
+.recycling-roads-assurance__title {
+  color: #111827;
+  font-size: 1.36rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.recycling-roads-benefit-card__text,
+.recycling-roads-application-card__text {
+  color: #4f5a69;
+}
+
+.recycling-roads-applications__layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.recycling-roads-applications__intro {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 2rem 1.8rem;
+}
+
+.recycling-roads-applications__intro .recycling-roads-applications__title {
+  color: #ffffff;
+}
+
+.recycling-roads-application-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.recycling-roads-application-card {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  padding: 1.55rem 1.4rem 1.45rem;
+}
+
+.recycling-roads-assurance__layout {
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+}
+
+.recycling-roads-assurance__card {
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.8rem;
+}
+
+.recycling-roads-assurance__card--dark {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  color: #ffffff;
+}
+
+.recycling-roads-assurance__card--light {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  color: #4f5a69;
+}
+
+.recycling-roads-updates {
+  padding: 0 0 6rem;
+}
+
+.recycling-roads-updates__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.recycling-roads-updates__media {
+  overflow: hidden;
+}
+
+.recycling-roads-updates__image {
+  aspect-ratio: 16 / 8.9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.recycling-roads-updates__body {
+  padding: 2rem 2rem 2.15rem;
+}
+
+.recycling-roads-updates__text {
+  color: #4f5a69;
+  margin: 0 0 1.15rem;
+}
+
+.recycling-roads-updates__text--last {
+  margin-bottom: 0;
+}
+
+.service-detail-hero__image--crcp {
+  object-position: center 36%;
+}
+
+.crcp-intro__layout,
+.crcp-approach__layout,
+.crcp-applications__layout,
+.crcp-assurance__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.crcp-intro__layout {
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+}
+
+.crcp-intro__eyebrow,
+.crcp-advantage-card__eyebrow,
+.crcp-applications__eyebrow,
+.crcp-assurance__eyebrow,
+.crcp-updates__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.crcp-intro__title,
+.crcp-applications__title,
+.crcp-updates__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 1.15rem;
+}
+
+.crcp-intro__panel {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 1.9rem 1.7rem;
+}
+
+.crcp-intro__panel-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.crcp-intro__panel-items {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.crcp-intro__panel-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.95rem 1rem 1rem;
+}
+
+.crcp-intro__panel-key {
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.crcp-intro__panel-text,
+.crcp-advantage-card__text,
+.crcp-applications__text,
+.crcp-application-card__text,
+.crcp-assurance__text,
+.crcp-updates__text {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.crcp-approach__layout {
+  grid-template-columns: minmax(0, 0.97fr) minmax(0, 1.03fr);
+}
+
+.crcp-approach__media {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.crcp-approach__image {
+  aspect-ratio: 16 / 12.4;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.crcp-approach__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.6;
+  margin: 1.35rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.crcp-advantage-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.crcp-advantage-card {
+  background: linear-gradient(180deg, #f7f5f1 0%, #f2f4f6 100%);
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  height: 100%;
+  overflow: hidden;
+  padding: 1.7rem 1.45rem 1.55rem;
+  position: relative;
+}
+
+.crcp-advantage-card::before {
+  background: linear-gradient(90deg, rgba(191, 34, 2, 0.16) 0%, rgba(191, 34, 2, 0) 100%);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.crcp-advantage-card__title,
+.crcp-application-card__title,
+.crcp-assurance__title {
+  color: #111827;
+  font-size: 1.36rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.85rem;
+}
+
+.crcp-assurance__card--dark .crcp-assurance__title {
+  color: #c8ced8;
+}
+
+.crcp-advantage-card__text,
+.crcp-application-card__text {
+  color: #4f5a69;
+}
+
+.crcp-applications__layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.crcp-applications__intro {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 2rem 1.8rem;
+}
+
+.crcp-applications__intro .crcp-applications__title {
+  color: #ffffff;
+}
+
+.crcp-application-grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.crcp-application-card {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  padding: 1.55rem 1.4rem 1.45rem;
+}
+
+.crcp-assurance__layout {
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+}
+
+.crcp-assurance__card {
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.8rem;
+}
+
+.crcp-assurance__card--dark {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  color: #ffffff;
+}
+
+.crcp-assurance__card--light {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  color: #4f5a69;
+}
+
+.crcp-updates {
+  padding: 0 0 6rem;
+}
+
+.crcp-updates__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.crcp-updates__media {
+  overflow: hidden;
+}
+
+.crcp-updates__image {
+  aspect-ratio: 16 / 8.9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.crcp-updates__body {
+  padding: 2rem 2rem 2.15rem;
+}
+
+.crcp-updates__text {
+  color: #4f5a69;
+  margin: 0 0 1.15rem;
+}
+
+.crcp-updates__text--last {
+  margin-bottom: 0;
+}
+
+.plant-equipment-article .resource-article__content {
+  max-width: 76rem;
+}
+
+.plant-fleet-overview__layout,
+.plant-facilities__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.plant-fleet-overview__layout {
+  grid-template-columns: minmax(0, 1.05fr) minmax(19rem, 0.95fr);
+}
+
+.plant-fleet-overview__eyebrow,
+.plant-facilities__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.plant-fleet-overview__title,
+.plant-facilities__title,
+.plant-section-heading__title {
+  color: #111827;
+  font-size: clamp(2rem, 2.45vw, 2.95rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.plant-fleet-overview__panel {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.plant-fleet-overview__media {
+  overflow: hidden;
+}
+
+.plant-fleet-overview__image {
+  aspect-ratio: 16 / 11.5;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.plant-fleet-overview__panel-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.plant-fleet-overview__metric {
+  background: #ffffff;
+  border: 1px solid #e1e5ea;
+  border-radius: 12px;
+  padding: 1.15rem 1.15rem 1.1rem;
+}
+
+.plant-fleet-overview__metric--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.08) 0%, #ffffff 100%);
+}
+
+.plant-fleet-overview__metric-value {
+  color: #111827;
+  display: block;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(1.9rem, 2.4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.7rem;
+}
+
+.plant-fleet-overview__metric-text,
+.plant-operate__text {
+  color: #4f5a69;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.plant-section-heading {
+  align-items: start;
+  display: flex;
+  gap: 1.3rem;
+  margin-bottom: 1.6rem;
+}
+
+.plant-section-heading__accent {
+  background: var(--site-primary);
+  border-radius: 2px;
+  flex: 0 0 auto;
+  height: 5.3rem;
+  width: 0.55rem;
+}
+
+.plant-equipment-chart-card,
+.plant-special-table-card {
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-radius: 16px;
+  box-shadow: 0 28px 56px rgba(17, 24, 39, 0.07);
+  margin: 0;
+  overflow: hidden;
+}
+
+.plant-equipment-chart-card__image {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.plant-special-table-card {
+  padding: 0.6rem;
+}
+
+.plant-special-table {
+  border-collapse: collapse;
+  overflow: hidden;
+  width: 100%;
+}
+
+.plant-special-table th,
+.plant-special-table td {
+  border: 2px solid #ffffff;
+  padding: 1.2rem 1rem;
+  vertical-align: middle;
+}
+
+.plant-special-table thead th {
+  background: #ececec;
+  color: #111827;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.plant-special-table tbody th,
+.plant-special-table tbody td {
+  background: #f4f4f3;
+  color: #364152;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.plant-special-table tbody th {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.plant-special-table td:last-child,
+.plant-special-table th:last-child {
+  text-align: center;
+  width: 14%;
+}
+
+.plant-facilities__layout {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+}
+
+.plant-facilities__media {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.plant-facilities__image {
+  aspect-ratio: 16 / 12.1;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.plant-facilities__card {
+  background: linear-gradient(135deg, #171b22 0%, #1f232c 100%);
+  border-radius: 14px;
+  color: #ffffff;
+  padding: 2rem 1.8rem;
+}
+
+.plant-facilities__card .plant-facilities__title {
+  color: #ffffff;
+  margin-bottom: 1.05rem;
+}
+
+.plant-facilities__list {
+  color: #d7dde5;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+}
+
+.plant-facilities__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.plant-facilities__tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  min-height: 2.4rem;
+  padding: 0.5rem 0.95rem;
+}
+
+.plant-operate .operations-grid {
+  gap: 1rem;
+  grid-template-areas:
+    "compliance human"
+    "quality plant";
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.plant-operate .operations-card {
+  min-height: 25.5rem;
+}
+
+.plant-operate__text {
+  margin: 0.9rem 0 0;
+  max-width: 42rem;
+}
+
+.lcch-hero {
+  background:
+    radial-gradient(circle at top right, rgba(16, 153, 165, 0.12), transparent 26%),
+    linear-gradient(180deg, #f7f5ef 0%, #ffffff 48%, #f5f7f8 100%);
+  overflow: hidden;
+  padding: 3rem 0 5rem;
+  position: relative;
+}
+
+.lcch-hero::before {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.04), transparent 50%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.lcch-hero__shell,
+.lcch-story__layout,
+.lcch-delivery__layout {
+  align-items: start;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.lcch-hero__shell {
+  grid-template-columns: minmax(0, 1.02fr) minmax(20rem, 0.98fr);
+  position: relative;
+  z-index: 1;
+}
+
+.lcch-hero__eyebrow,
+.lcch-story__eyebrow,
+.lcch-documents__eyebrow,
+.lcch-delivery__eyebrow,
+.lcch-gallery__eyebrow,
+.lcch-document-card__eyebrow {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.9rem;
+  text-transform: uppercase;
+}
+
+.lcch-hero__title,
+.lcch-story__title,
+.lcch-documents__title,
+.lcch-delivery__title,
+.lcch-gallery__title {
+  color: #111827;
+  font-size: clamp(2.4rem, 4vw, 4.55rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+  margin: 0 0 1.15rem;
+}
+
+.lcch-hero__subtitle {
+  color: #1f2937;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 1.1rem;
+}
+
+.lcch-hero__text,
+.lcch-story__text,
+.lcch-documents__text,
+.lcch-delivery__text,
+.lcch-document-card__text {
+  color: #4f5a69;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1.1rem;
+}
+
+.lcch-hero__text--last,
+.lcch-story__text--last {
+  margin-bottom: 0;
+}
+
+.lcch-hero__stats {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.8rem;
+}
+
+.lcch-stat {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 14px;
+  padding: 1.45rem 1.25rem;
+}
+
+.lcch-stat--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.08) 0%, #ffffff 100%);
+}
+
+.lcch-stat__value {
+  color: #111827;
+  display: block;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.65rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.7rem;
+}
+
+.lcch-stat__label {
+  color: #4f5a69;
+  font-size: 0.98rem;
+  line-height: 1.58;
+  margin: 0;
+}
+
+.lcch-hero__media-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lcch-hero__media-card,
+.lcch-story__image-card,
+.lcch-delivery__image-card,
+.lcch-gallery__card {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lcch-hero__media-card--large {
+  grid-column: 1 / -1;
+}
+
+.lcch-hero__image,
+.lcch-story__image,
+.lcch-delivery__image,
+.lcch-gallery__image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.lcch-hero__media-card--large .lcch-hero__image {
+  aspect-ratio: 16 / 10.6;
+}
+
+.lcch-hero__media-card:not(.lcch-hero__media-card--large) .lcch-hero__image {
+  aspect-ratio: 4 / 4.2;
+}
+
+.lcch-story {
+  padding: 0 0 5.8rem;
+}
+
+.lcch-story__layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr);
+}
+
+.lcch-story__gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.lcch-story__image-card--tall .lcch-story__image {
+  aspect-ratio: 4 / 5.4;
+}
+
+.lcch-story__image-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.lcch-story__image-stack .lcch-story__image {
+  aspect-ratio: 4 / 2.55;
+}
+
+.lcch-documents {
+  padding: 0 0 5.8rem;
+}
+
+.lcch-documents__intro {
+  margin: 0 auto 2rem;
+  max-width: 46rem;
+  text-align: center;
+}
+
+.lcch-document-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lcch-document-card {
+  background: #f5f6f7;
+  border: 1px solid #d9dde3;
+  border-radius: 18px;
+  padding: 1.75rem 1.55rem 1.6rem;
+}
+
+.lcch-document-card--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.08) 0%, #f5f6f7 100%);
+}
+
+.lcch-document-card__title {
+  color: #111827;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.9rem;
+}
+
+.lcch-document-card__button {
+  align-items: center;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 999px;
+  color: #111827;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  min-height: 3rem;
+  padding: 0.55rem 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lcch-document-card__button:hover,
+.lcch-document-card__button:focus {
+  background: #ffffff;
+  border-color: rgba(17, 24, 39, 0.2);
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.lcch-delivery {
+  padding: 0 0 5.8rem;
+}
+
+.lcch-delivery__layout {
+  grid-template-columns: minmax(0, 1.03fr) minmax(19rem, 0.97fr);
+}
+
+.lcch-delivery__list {
+  color: #4f5a69;
+  display: grid;
+  gap: 0.8rem;
+  line-height: 1.62;
+  margin: 1.4rem 0 0;
+  padding-left: 1.3rem;
+}
+
+.lcch-delivery__media-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.lcch-delivery__image-card--offset {
+  margin-left: 2rem;
+}
+
+.lcch-delivery__image {
+  aspect-ratio: 16 / 10.1;
+}
+
+.lcch-gallery {
+  padding: 0 0 6rem;
+}
+
+.lcch-gallery__intro {
+  margin-bottom: 2rem;
+  max-width: 42rem;
+}
+
+.lcch-gallery__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lcch-gallery__card--wide {
+  grid-column: span 2;
+}
+
+.lcch-gallery__card--tall {
+  grid-row: span 2;
+}
+
+.lcch-gallery__card--wide .lcch-gallery__image {
+  aspect-ratio: 16 / 10;
+}
+
+.lcch-gallery__card:not(.lcch-gallery__card--wide):not(.lcch-gallery__card--tall) .lcch-gallery__image {
+  aspect-ratio: 4 / 4.1;
+}
+
+.lcch-gallery__card--tall .lcch-gallery__image {
+  aspect-ratio: 4 / 8.4;
 }
 
 .quarry-intro {
@@ -2332,7 +4272,7 @@ h6,
 }
 
 [data-bs-theme="dark"] {
-  --site-header-bg: rgba(18, 18, 18, 0.95);
+  --site-header-bg: var(--site-body-bg);
   --site-header-border: rgba(255, 255, 255, 0.08);
   --site-body-bg: #0f0f10;
   --site-text: #dbdee4;
@@ -2360,6 +4300,11 @@ h6,
 [data-bs-theme="dark"] .dropdown-item,
 [data-bs-theme="dark"] .dropdown-link {
   color: #d0d5dd;
+}
+
+[data-bs-theme="dark"] .theme-menu .dropdown-item.active {
+  background: rgba(191, 34, 2, 0.2);
+  color: #ffe1da;
 }
 
 [data-bs-theme="dark"] .dropdown-item:hover,
@@ -2478,6 +4423,11 @@ h6,
   background: rgba(255, 255, 255, 0.12);
 }
 
+[data-bs-theme="dark"] .operations-card__title--grey,
+[data-bs-theme="dark"] .operations-card__title--grey-soft {
+  color: #c8ced8;
+}
+
 [data-bs-theme="dark"] .resource-hero__title,
 [data-bs-theme="dark"] .resource-article__title,
 [data-bs-theme="dark"] .resource-article__subheading {
@@ -2519,6 +4469,246 @@ h6,
 
 [data-bs-theme="dark"] .service-detail-hero__promo-button {
   background: transparent;
+}
+
+[data-bs-theme="dark"] .roadworks-story__title,
+[data-bs-theme="dark"] .roadworks-focus__title,
+[data-bs-theme="dark"] .roadworks-updates__title,
+[data-bs-theme="dark"] .roadworks-service-card__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .roadworks-story__text,
+[data-bs-theme="dark"] .roadworks-service-card__text,
+[data-bs-theme="dark"] .roadworks-updates__text,
+[data-bs-theme="dark"] .roadworks-updates__list {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .roadworks-service-card,
+[data-bs-theme="dark"] .roadworks-updates__panel {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .water-schemes-intro__title,
+[data-bs-theme="dark"] .water-schemes-updates__title,
+[data-bs-theme="dark"] .water-schemes-service-card__title,
+[data-bs-theme="dark"] .water-schemes-assurance__title,
+[data-bs-theme="dark"] .water-schemes-stat__value {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .water-schemes-stat,
+[data-bs-theme="dark"] .water-schemes-service-card,
+[data-bs-theme="dark"] .water-schemes-assurance__card--light,
+[data-bs-theme="dark"] .water-schemes-updates__panel {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .water-schemes-stat--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.2) 0%, #171b23 100%);
+}
+
+[data-bs-theme="dark"] .water-schemes-stat__label,
+[data-bs-theme="dark"] .water-schemes-service-card__text,
+[data-bs-theme="dark"] .water-schemes-updates__text,
+[data-bs-theme="dark"] .water-schemes-approach__highlights,
+[data-bs-theme="dark"] .water-schemes-assurance__card--light,
+[data-bs-theme="dark"] .water-schemes-assurance__card--light .water-schemes-assurance__text {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .landworks-intro__title,
+[data-bs-theme="dark"] .landworks-updates__title,
+[data-bs-theme="dark"] .landworks-service-card__title,
+[data-bs-theme="dark"] .landworks-excellence__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .landworks-excellence__card--dark .landworks-excellence__title {
+  color: #c8ced8;
+}
+
+[data-bs-theme="dark"] .landworks-service-card,
+[data-bs-theme="dark"] .landworks-excellence__card--light,
+[data-bs-theme="dark"] .landworks-updates__panel {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .landworks-service-card__text,
+[data-bs-theme="dark"] .landworks-excellence__card--light,
+[data-bs-theme="dark"] .landworks-excellence__card--light .landworks-excellence__text,
+[data-bs-theme="dark"] .landworks-approach__list,
+[data-bs-theme="dark"] .landworks-updates__text {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .foam-materials-intro__title,
+[data-bs-theme="dark"] .foam-materials-updates__title,
+[data-bs-theme="dark"] .foam-materials-partnership__title,
+[data-bs-theme="dark"] .foam-materials-service-card__title,
+[data-bs-theme="dark"] .foam-materials-performance__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .foam-materials-service-card,
+[data-bs-theme="dark"] .foam-materials-performance__card--light,
+[data-bs-theme="dark"] .foam-materials-updates__panel {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .foam-materials-service-card__text,
+[data-bs-theme="dark"] .foam-materials-performance__card--light,
+[data-bs-theme="dark"] .foam-materials-performance__card--light .foam-materials-performance__text,
+[data-bs-theme="dark"] .foam-materials-approach__list,
+[data-bs-theme="dark"] .foam-materials-updates__text,
+[data-bs-theme="dark"] .foam-materials-updates__list {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .recycling-roads-intro__title,
+[data-bs-theme="dark"] .recycling-roads-applications__title,
+[data-bs-theme="dark"] .recycling-roads-updates__title,
+[data-bs-theme="dark"] .recycling-roads-benefit-card__title,
+[data-bs-theme="dark"] .recycling-roads-application-card__title,
+[data-bs-theme="dark"] .recycling-roads-assurance__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .recycling-roads-benefit-card,
+[data-bs-theme="dark"] .recycling-roads-application-card,
+[data-bs-theme="dark"] .recycling-roads-assurance__card--light,
+[data-bs-theme="dark"] .recycling-roads-updates__panel {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .recycling-roads-benefit-card__text,
+[data-bs-theme="dark"] .recycling-roads-application-card__text,
+[data-bs-theme="dark"] .recycling-roads-assurance__card--light,
+[data-bs-theme="dark"] .recycling-roads-assurance__card--light .recycling-roads-assurance__text,
+[data-bs-theme="dark"] .recycling-roads-approach__list,
+[data-bs-theme="dark"] .recycling-roads-updates__text {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .crcp-intro__title,
+[data-bs-theme="dark"] .crcp-applications__title,
+[data-bs-theme="dark"] .crcp-updates__title,
+[data-bs-theme="dark"] .crcp-advantage-card__title,
+[data-bs-theme="dark"] .crcp-application-card__title,
+[data-bs-theme="dark"] .crcp-assurance__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .crcp-assurance__card--dark .crcp-assurance__title {
+  color: #c8ced8;
+}
+
+[data-bs-theme="dark"] .crcp-advantage-card,
+[data-bs-theme="dark"] .crcp-application-card,
+[data-bs-theme="dark"] .crcp-assurance__card--light,
+[data-bs-theme="dark"] .crcp-updates__panel {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .crcp-advantage-card__text,
+[data-bs-theme="dark"] .crcp-application-card__text,
+[data-bs-theme="dark"] .crcp-assurance__card--light,
+[data-bs-theme="dark"] .crcp-assurance__card--light .crcp-assurance__text,
+[data-bs-theme="dark"] .crcp-approach__list,
+[data-bs-theme="dark"] .crcp-updates__text {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .plant-fleet-overview__title,
+[data-bs-theme="dark"] .plant-facilities__title,
+[data-bs-theme="dark"] .plant-section-heading__title,
+[data-bs-theme="dark"] .plant-fleet-overview__metric-value {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .plant-fleet-overview__panel,
+[data-bs-theme="dark"] .plant-fleet-overview__metric,
+[data-bs-theme="dark"] .plant-equipment-chart-card,
+[data-bs-theme="dark"] .plant-special-table-card {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .plant-fleet-overview__metric--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.2) 0%, #171b23 100%);
+}
+
+[data-bs-theme="dark"] .plant-fleet-overview__metric-text,
+[data-bs-theme="dark"] .plant-operate__text {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .plant-special-table thead th {
+  background: #20242d;
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .plant-special-table tbody th,
+[data-bs-theme="dark"] .plant-special-table tbody td {
+  background: #171b23;
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .lcch-hero {
+  background:
+    radial-gradient(circle at top right, rgba(16, 153, 165, 0.16), transparent 28%),
+    linear-gradient(180deg, #11151b 0%, #12171e 45%, #151b22 100%);
+}
+
+[data-bs-theme="dark"] .lcch-hero__title,
+[data-bs-theme="dark"] .lcch-story__title,
+[data-bs-theme="dark"] .lcch-documents__title,
+[data-bs-theme="dark"] .lcch-delivery__title,
+[data-bs-theme="dark"] .lcch-gallery__title,
+[data-bs-theme="dark"] .lcch-stat__value,
+[data-bs-theme="dark"] .lcch-document-card__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .lcch-hero__subtitle,
+[data-bs-theme="dark"] .lcch-hero__text,
+[data-bs-theme="dark"] .lcch-story__text,
+[data-bs-theme="dark"] .lcch-documents__text,
+[data-bs-theme="dark"] .lcch-delivery__text,
+[data-bs-theme="dark"] .lcch-delivery__list,
+[data-bs-theme="dark"] .lcch-stat__label,
+[data-bs-theme="dark"] .lcch-document-card__text {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .lcch-stat,
+[data-bs-theme="dark"] .lcch-document-card {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .lcch-stat--accent,
+[data-bs-theme="dark"] .lcch-document-card--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.18) 0%, #171b23 100%);
+}
+
+[data-bs-theme="dark"] .lcch-document-card__button {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .lcch-document-card__button:hover,
+[data-bs-theme="dark"] .lcch-document-card__button:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 
 [data-bs-theme="dark"] .quarry-intro__title,
@@ -2892,6 +5082,87 @@ h6,
     max-width: 58rem;
   }
 
+  .roadworks-story__layout,
+  .roadworks-focus__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .water-schemes-intro__layout,
+  .water-schemes-approach__layout,
+  .water-schemes-technology__layout,
+  .water-schemes-assurance__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .landworks-intro__layout,
+  .landworks-approach__layout,
+  .landworks-excellence__layout,
+  .landworks-partnership__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .foam-materials-intro__layout,
+  .foam-materials-approach__layout,
+  .foam-materials-performance__layout,
+  .foam-materials-partnership__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .recycling-roads-intro__layout,
+  .recycling-roads-approach__layout,
+  .recycling-roads-applications__layout,
+  .recycling-roads-assurance__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .crcp-intro__layout,
+  .crcp-approach__layout,
+  .crcp-applications__layout,
+  .crcp-assurance__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-fleet-overview__layout,
+  .plant-facilities__layout,
+  .lcch-hero__shell,
+  .lcch-story__layout,
+  .lcch-delivery__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .roadworks-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .water-schemes-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landworks-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .foam-materials-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recycling-roads-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crcp-advantage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lcch-hero__stats,
+  .lcch-document-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lcch-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .resource-article {
     padding-bottom: 5.15rem;
   }
@@ -3122,6 +5393,83 @@ h6,
 
   .who-story__media-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-detail-hero {
+    padding-top: 2.3rem;
+  }
+
+  .service-detail-hero__title {
+    font-size: clamp(2.15rem, 9vw, 3.2rem);
+    margin-bottom: 1.55rem;
+  }
+
+  .service-detail-hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-hero__promo {
+    padding: 1.85rem 1.55rem;
+  }
+
+  .service-detail-article {
+    padding-top: 3.2rem;
+  }
+
+  .roadworks-story__gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roadworks-updates {
+    padding-bottom: 4.2rem;
+  }
+
+  .roadworks-updates__panel-body {
+    padding: 1.7rem 1.55rem 1.8rem;
+  }
+
+  .water-schemes-updates {
+    padding-bottom: 4.2rem;
+  }
+
+  .water-schemes-updates__body {
+    padding: 1.75rem 1.55rem 1.85rem;
+  }
+
+  .landworks-updates {
+    padding-bottom: 4.2rem;
+  }
+
+  .landworks-updates__body {
+    padding: 1.75rem 1.55rem 1.85rem;
+  }
+
+  .foam-materials-updates {
+    padding-bottom: 4.2rem;
+  }
+
+  .foam-materials-updates__body {
+    padding: 1.75rem 1.55rem 1.85rem;
+  }
+
+  .recycling-roads-updates {
+    padding-bottom: 4.2rem;
+  }
+
+  .recycling-roads-updates__body {
+    padding: 1.75rem 1.55rem 1.85rem;
+  }
+
+  .crcp-updates {
+    padding-bottom: 4.2rem;
+  }
+
+  .crcp-updates__body {
+    padding: 1.75rem 1.55rem 1.85rem;
+  }
+
+  .lcch-hero {
+    padding-bottom: 4.2rem;
   }
 
   .resource-hero {
@@ -3391,6 +5739,173 @@ h6,
   .resource-hero__image {
     aspect-ratio: 16 / 10.5;
     object-position: center top;
+  }
+
+  .service-detail-hero__title {
+    font-size: clamp(1.95rem, 10vw, 2.85rem);
+  }
+
+  .service-detail-hero__image {
+    aspect-ratio: 16 / 12.4;
+  }
+
+  .service-detail-hero__promo {
+    padding: 1.55rem 1.2rem;
+  }
+
+  .service-detail-hero__promo-title {
+    font-size: 1.45rem;
+  }
+
+  .service-detail-hero__promo-text,
+  .service-detail-article__label {
+    font-size: 0.96rem;
+  }
+
+  .service-detail-hero__promo-button {
+    width: 100%;
+  }
+
+  .roadworks-story__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .roadworks-story__image-card--offset {
+    margin-top: 0;
+  }
+
+  .roadworks-service-card {
+    padding: 1.4rem 1.15rem 1.35rem;
+  }
+
+  .roadworks-updates__list {
+    font-size: 0.96rem;
+    margin-top: 1.1rem;
+  }
+
+  .water-schemes-service-card {
+    padding: 1.45rem 1.15rem 1.35rem;
+  }
+
+  .water-schemes-approach__highlights {
+    font-size: 0.96rem;
+    margin-top: 1.1rem;
+  }
+
+  .water-schemes-updates__text,
+  .water-schemes-stat__label,
+  .water-schemes-service-card__text,
+  .water-schemes-assurance__text,
+  .water-schemes-technology__item p {
+    font-size: 0.96rem;
+  }
+
+  .landworks-service-card {
+    padding: 1.45rem 1.15rem 1.35rem;
+  }
+
+  .landworks-approach__list,
+  .landworks-updates__text,
+  .landworks-service-card__text,
+  .landworks-excellence__text,
+  .landworks-intro__panel-text {
+    font-size: 0.96rem;
+  }
+
+  .landworks-partnership__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .landworks-partnership__image-card--offset {
+    margin-top: 0;
+  }
+
+  .foam-materials-service-card {
+    padding: 1.45rem 1.15rem 1.35rem;
+  }
+
+  .foam-materials-approach__list,
+  .foam-materials-updates__text,
+  .foam-materials-updates__list,
+  .foam-materials-service-card__text,
+  .foam-materials-performance__text,
+  .foam-materials-intro__panel-text {
+    font-size: 0.96rem;
+  }
+
+  .foam-materials-partnership__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .foam-materials-partnership__image-card--offset {
+    margin-top: 0;
+  }
+
+  .recycling-roads-benefit-card,
+  .recycling-roads-application-card {
+    padding: 1.45rem 1.15rem 1.35rem;
+  }
+
+  .recycling-roads-approach__list,
+  .recycling-roads-benefit-card__text,
+  .recycling-roads-applications__text,
+  .recycling-roads-application-card__text,
+  .recycling-roads-assurance__text,
+  .recycling-roads-updates__text,
+  .recycling-roads-intro__panel-text {
+    font-size: 0.96rem;
+  }
+
+  .crcp-advantage-card,
+  .crcp-application-card {
+    padding: 1.45rem 1.15rem 1.35rem;
+  }
+
+  .plant-special-table th,
+  .plant-special-table td {
+    padding: 1rem 0.85rem;
+  }
+
+  .lcch-delivery__image-card--offset {
+    margin-left: 0;
+  }
+
+  .crcp-approach__list,
+  .crcp-advantage-card__text,
+  .crcp-applications__text,
+  .crcp-application-card__text,
+  .crcp-assurance__text,
+  .crcp-updates__text,
+  .crcp-intro__panel-text {
+    font-size: 0.96rem;
+  }
+
+  .plant-fleet-overview__metric-text,
+  .plant-operate__text,
+  .lcch-hero__text,
+  .lcch-story__text,
+  .lcch-documents__text,
+  .lcch-delivery__text,
+  .lcch-delivery__list,
+  .lcch-stat__label,
+  .lcch-document-card__text {
+    font-size: 0.96rem;
+  }
+
+  .lcch-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lcch-gallery__card--wide,
+  .lcch-gallery__card--tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .lcch-gallery__card--tall .lcch-gallery__image,
+  .lcch-gallery__card--wide .lcch-gallery__image,
+  .lcch-gallery__card:not(.lcch-gallery__card--wide):not(.lcch-gallery__card--tall) .lcch-gallery__image {
+    aspect-ratio: 16 / 11.5;
   }
 
   .resource-hero__image--plant {

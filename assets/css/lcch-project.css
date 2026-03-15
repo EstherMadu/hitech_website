@@ -1,0 +1,178 @@
+.lcch-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.45rem;
+}
+
+.lcch-hero__button {
+  align-items: center;
+  background: #171b23;
+  border: 1px solid #171b23;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  min-height: 3rem;
+  padding: 0.55rem 1.1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.lcch-hero__button:hover,
+.lcch-hero__button:focus {
+  background: #20242d;
+  border-color: #20242d;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.lcch-hero__button--ghost {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(17, 24, 39, 0.12);
+  color: #111827;
+}
+
+.lcch-hero__button--ghost:hover,
+.lcch-hero__button--ghost:focus {
+  background: #ffffff;
+  border-color: rgba(17, 24, 39, 0.2);
+  color: #111827;
+}
+
+.lcch-story__meta-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.65rem;
+}
+
+.lcch-story__meta-card,
+.lcch-milestone-card {
+  background: #f5f6f7;
+  border: 1px solid #d9dde3;
+  border-radius: 18px;
+  padding: 1.4rem 1.2rem 1.3rem;
+}
+
+.lcch-story__meta-card--accent,
+.lcch-milestone-card--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.08) 0%, #f5f6f7 100%);
+}
+
+.lcch-story__meta-label,
+.lcch-milestone-card__date {
+  color: var(--site-primary);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+.lcch-story__meta-title,
+.lcch-milestone-card__title {
+  color: #111827;
+  font-size: 1.16rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.55rem;
+}
+
+.lcch-story__meta-text,
+.lcch-milestone-card__text,
+.lcch-documents__note {
+  color: #4f5a69;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lcch-milestones {
+  padding: 0 0 5.8rem;
+}
+
+.lcch-milestones__intro {
+  margin: 0 auto 2rem;
+  max-width: 46rem;
+  text-align: center;
+}
+
+.lcch-milestone-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body[data-page="lcch-project"] .lcch-document-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lcch-documents__note {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+[data-bs-theme="dark"] .lcch-hero__button {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .lcch-hero__button:hover,
+[data-bs-theme="dark"] .lcch-hero__button:focus {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+[data-bs-theme="dark"] .lcch-hero__button--ghost {
+  background: rgba(191, 34, 2, 0.22);
+  border-color: rgba(191, 34, 2, 0.28);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .lcch-story__meta-card,
+[data-bs-theme="dark"] .lcch-milestone-card {
+  background: #171b23;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .lcch-story__meta-card--accent,
+[data-bs-theme="dark"] .lcch-milestone-card--accent {
+  background: linear-gradient(145deg, rgba(191, 34, 2, 0.22) 0%, #171b23 100%);
+}
+
+[data-bs-theme="dark"] .lcch-story__meta-title,
+[data-bs-theme="dark"] .lcch-milestone-card__title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .lcch-story__meta-text,
+[data-bs-theme="dark"] .lcch-milestone-card__text,
+[data-bs-theme="dark"] .lcch-documents__note {
+  color: #cfd5de;
+}
+
+@media (max-width: 991.98px) {
+  .lcch-story__meta-grid,
+  .lcch-milestone-grid,
+  body[data-page="lcch-project"] .lcch-document-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lcch-hero__actions {
+    flex-direction: column;
+  }
+
+  .lcch-story__meta-grid,
+  .lcch-milestone-grid,
+  body[data-page="lcch-project"] .lcch-document-grid {
+    grid-template-columns: 1fr;
+  }
+}

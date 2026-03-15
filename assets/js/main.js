@@ -5,6 +5,7 @@ const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
 const siteState = {
   themeOptions: [],
   themeIcon: null,
+  themeLabel: null,
   header: null,
   backToTopButton: null,
   projectFilterButtons: [],
@@ -46,6 +47,7 @@ async function loadSharedPartials() {
 function cacheDom() {
   siteState.themeOptions = Array.from(document.querySelectorAll("[data-theme-value]"));
   siteState.themeIcon = document.querySelector(".theme-icon-active");
+  siteState.themeLabel = document.querySelector(".theme-toggle-label");
   siteState.header = document.querySelector(".header-sticky");
   siteState.backToTopButton = document.querySelector(".back-to-top");
   siteState.projectFilterButtons = Array.from(document.querySelectorAll("[data-project-filter]"));
@@ -71,6 +73,18 @@ function iconMarkup(theme) {
   return '<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>';
 }
 
+function themeLabelText(theme) {
+  if (theme === "light") {
+    return "Light";
+  }
+
+  if (theme === "dark") {
+    return "Dark";
+  }
+
+  return "Auto";
+}
+
 function applyTheme(theme) {
   const resolvedTheme = resolveTheme(theme);
   root.setAttribute("data-bs-theme", resolvedTheme);
@@ -82,6 +96,10 @@ function applyTheme(theme) {
 
   if (siteState.themeIcon) {
     siteState.themeIcon.innerHTML = iconMarkup(theme);
+  }
+
+  if (siteState.themeLabel) {
+    siteState.themeLabel.textContent = themeLabelText(theme);
   }
 }
 
