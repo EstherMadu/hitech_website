@@ -1,0 +1,43 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+ServerSignature Off
+
+<IfModule mod_headers.c>
+Header always unset X-Powered-By
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+Header always set X-Permitted-Cross-Domain-Policies "none"
+Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; media-src 'self' https:;"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{REQUEST_METHOD} ^(?:TRACE|TRACK|DELETE|CONNECT|DEBUG)$ [NC]
+RewriteRule .* - [F,L]
+
+RewriteRule (^|/)\.(?!well-known/) - [F,L,NC]
+RewriteRule ^(?:app|scripts|assets/image-sources)(?:/|$) - [F,L,NC]
+RewriteRule ^assets/.*\.php$ - [F,L,NC]
+RewriteRule ^(?:AGENTS\.md|CPANEL_SETUP\.md|IMAGE_WORKFLOW\.md|composer\.(?:json|lock)|package(?:-lock)?\.json|yarn\.lock|pnpm-lock\.yaml)(?:$|/) - [F,L,NC]
+
+RewriteRule ^index\.html$ / [R=301,L,NC]
+RewriteRule ^careers\.html$ /careers/ [R=301,L,NC]
+RewriteRule ^contact\.html$ /contact/ [R=301,L,NC]
+RewriteRule ^quarry\.html$ /quarry/ [R=301,L,NC]
+RewriteRule ^who-we-are\.html$ /about/who-we-are/ [R=301,L,NC]
+RewriteRule ^human-resources\.html$ /about/human-resources/ [R=301,L,NC]
+RewriteRule ^company-compliance\.html$ /about/company-compliance/ [R=301,L,NC]
+RewriteRule ^plant-and-equipment\.html$ /about/plant-and-equipment/ [R=301,L,NC]
+RewriteRule ^quality-safety-and-environment\.html$ /about/quality-safety-and-environment/ [R=301,L,NC]
+RewriteRule ^water-supply-and-irrigation-schemes\.html$ /services/water-supply-and-irrigation-schemes/ [R=301,L,NC]
+RewriteRule ^foam-bitumen-stabilised-materials\.html$ /services/foam-bitumen-stabilised-materials/ [R=301,L,NC]
+RewriteRule ^recycling-of-existing-road-layers\.html$ /services/recycling-of-existing-road-layers/ [R=301,L,NC]
+RewriteRule ^land-reclamation-river-canalization-and-dredging\.html$ /services/land-reclamation-river-canalization-and-dredging/ [R=301,L,NC]
+RewriteRule ^continuously-reinforced-concrete-pavements\.html$ /services/continuously-reinforced-concrete-pavements/ [R=301,L,NC]
+RewriteRule ^roadworks-bridges-drainage-and-concrete-structures\.html$ /services/roadworks-bridges-drainage-and-concrete-structures/ [R=301,L,NC]
+RewriteRule ^lagos-calabar-coastal-highway-project\.html$ /projects/lagos-calabar-coastal-highway-project/ [R=301,L,NC]
+RewriteRule ^republic-of-nigeria\.html$ /projects/republic-of-nigeria/ [R=301,L,NC]
+</IfModule>

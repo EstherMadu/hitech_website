@@ -22,6 +22,11 @@ body {
   overflow-x: hidden;
 }
 
+.deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 760px;
+}
+
 h1,
 h2,
 h3,
@@ -73,11 +78,11 @@ h6,
 }
 
 .navbar-brand {
-  padding: 24px 0;
+  padding: 20px 0;
 }
 
 .navbar-brand .navbar-brand-item {
-  height: 50px !important;
+  height: 44px !important;
   width: auto;
 }
 
@@ -182,6 +187,11 @@ h6,
 
 .header-actions {
   gap: 0.35rem;
+  flex-wrap: nowrap;
+}
+
+.header-actions > .nav-item {
+  flex: 0 0 auto;
 }
 
 .mobile-nav-cta {
@@ -259,6 +269,7 @@ h6,
   border-color: #f3f3f1;
   color: #202635;
   padding-inline: 1rem;
+  white-space: nowrap;
 }
 
 .report-case-btn:hover,
@@ -291,6 +302,7 @@ h6,
 }
 
 .hero-slide {
+  background-color: #0f1116;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -303,21 +315,23 @@ h6,
 }
 
 .hero-content {
-  max-width: 48rem;
+  max-width: 49rem;
 }
 
 .hero-title {
   color: #ffffff;
-  font-size: clamp(3.15rem, 4.1vw, 5rem);
+  font-size: clamp(2.95rem, 4vw, 4.7rem);
   font-weight: 700;
-  letter-spacing: -0.05em;
-  max-width: 48rem;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  max-width: 46rem;
+  text-wrap: balance;
 }
 
 .hero-text {
   color: var(--site-muted);
-  font-size: clamp(1rem, 1.05vw, 1.35rem);
-  line-height: 1.52;
+  font-size: clamp(1rem, 0.96vw, 1.18rem);
+  line-height: 1.58;
   max-width: 41rem;
 }
 
@@ -1503,6 +1517,27 @@ h6,
   width: 1.1rem;
 }
 
+.newsletter-card__submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.newsletter-card__status {
+  color: #e6e7eb;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0.85rem 0 0;
+  min-height: 1.45rem;
+}
+
+.newsletter-card__status[data-state="success"] {
+  color: #c6f6da;
+}
+
+.newsletter-card__status[data-state="error"] {
+  color: #fecaca;
+}
+
 .newsletter-card__note {
   align-items: center;
   color: #e6e7eb;
@@ -1947,6 +1982,457 @@ h6,
 .resource-article__content {
   margin: 0 auto;
   max-width: 66rem;
+}
+
+.contact-page {
+  padding: 4.3rem 0 6rem;
+}
+
+.contact-page__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.85fr);
+}
+
+.contact-card {
+  background: #f3f4f6;
+  border: 1px solid #d9dde3;
+  border-radius: 10px;
+  padding: 2.25rem 2rem;
+}
+
+.contact-card--aside {
+  background: linear-gradient(180deg, #171b23 0%, #1d222c 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.contact-card__eyebrow {
+  color: var(--site-primary);
+  display: inline-block;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-card__title {
+  color: #111827;
+  font-size: clamp(1.9rem, 2.3vw, 2.85rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0.8rem 0 1rem;
+}
+
+.contact-card__title--aside,
+.contact-card--aside .contact-aside__title {
+  color: #ffffff;
+}
+
+.contact-card__text {
+  color: #576172;
+  font-size: 1rem;
+  line-height: 1.58;
+  margin: 0;
+}
+
+.contact-card--aside .contact-card__text {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contact-form {
+  margin-top: 2rem;
+}
+
+.contact-form__grid {
+  display: grid;
+  gap: 1rem 1.1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.contact-field--full {
+  margin-top: 1rem;
+}
+
+.contact-field__label {
+  color: #111827;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.contact-field__input {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #111827;
+  font-size: 1rem;
+  min-height: 3.35rem;
+  padding: 0.9rem 1rem;
+  width: 100%;
+}
+
+.contact-field__input:focus {
+  border-color: rgba(191, 34, 2, 0.42);
+  outline: none;
+}
+
+.contact-field__select {
+  appearance: none;
+}
+
+.contact-field__textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.contact-form__actions {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1.35rem;
+}
+
+.contact-form__submit {
+  min-height: 3.4rem;
+  padding-inline: 1.55rem;
+}
+
+.contact-form__submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.contact-form__note {
+  color: #5b6574;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 25rem;
+}
+
+.contact-form__status {
+  color: #5b6574;
+  font-size: 0.96rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+  min-height: 1.5rem;
+}
+
+.contact-form__status[data-state="success"] {
+  color: #0d7a43;
+}
+
+.contact-form__status[data-state="error"] {
+  color: var(--site-primary);
+}
+
+.report-hero__card {
+  max-width: 69rem;
+}
+
+.report-hero__image {
+  object-position: center 38%;
+}
+
+.report-hero__text {
+  color: #576172;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  max-width: 47rem;
+}
+
+.case-overview {
+  padding: 4.3rem 0 1.5rem;
+}
+
+.case-overview__grid {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.28fr);
+}
+
+.case-overview__intro {
+  max-width: 35rem;
+}
+
+.case-overview__cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-overview__card {
+  background: #ffffff;
+  border: 1px solid #d9dde3;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  min-height: 100%;
+  padding: 1.45rem 1.3rem 1.5rem;
+}
+
+.case-overview__card-kicker {
+  color: var(--site-primary);
+  display: inline-block;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+.case-overview__card-title {
+  color: #111827;
+  font-size: 1.22rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin: 0 0 0.8rem;
+}
+
+.case-overview__card-text {
+  color: #5b6574;
+  line-height: 1.58;
+  margin: 0;
+}
+
+.case-report-page {
+  padding: 1.45rem 0 6rem;
+}
+
+.case-report-page__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(20rem, 0.85fr);
+}
+
+.report-form-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.report-form-card::before {
+  background: linear-gradient(90deg, rgba(191, 34, 2, 0.88), rgba(191, 34, 2, 0));
+  content: "";
+  display: block;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.report-form__section {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.report-form__choice-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0.8rem;
+}
+
+.report-form__choice-card {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 0.7rem;
+  min-height: 4rem;
+  padding: 0.95rem 1rem;
+}
+
+.report-form__choice-card input {
+  accent-color: var(--site-primary);
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.report-form__choice-card span {
+  color: #111827;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.report-form__helper {
+  margin: 1rem 0 0;
+}
+
+.report-form__contact-grid {
+  margin-top: 1rem;
+}
+
+.report-form__textarea--short {
+  min-height: 7.5rem;
+}
+
+.report-form__footer {
+  align-items: flex-start;
+}
+
+.report-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.report-form__secondary {
+  border-color: #d7dce3;
+  color: #1b2430;
+  min-height: 3.4rem;
+  padding-inline: 1.35rem;
+}
+
+.report-form__secondary:hover,
+.report-form__secondary:focus {
+  background: #eceff3;
+  border-color: #eceff3;
+  color: #111827;
+}
+
+.report-aside__steps,
+.report-aside__checklist {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+
+.report-aside__steps {
+  list-style: none;
+}
+
+.report-aside__step {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1rem 1rem 3.6rem;
+  position: relative;
+}
+
+.report-aside__step strong {
+  color: #ffffff;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.02rem;
+}
+
+.report-aside__step span:last-child {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
+.report-aside__step-index {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  height: 1.8rem;
+  justify-content: center;
+  left: 1rem;
+  position: absolute;
+  top: 1rem;
+  width: 1.8rem;
+}
+
+.report-aside__checklist {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  list-style: none;
+}
+
+.report-aside__checklist li {
+  padding-left: 1.45rem;
+  position: relative;
+}
+
+.report-aside__checklist li::before {
+  color: var(--site-primary);
+  content: "+";
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.contact-aside__section + .contact-aside__section {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 1.65rem;
+  padding-top: 1.65rem;
+}
+
+.contact-aside__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.85rem;
+}
+
+.contact-aside__list {
+  color: rgba(255, 255, 255, 0.82);
+  display: grid;
+  gap: 0.85rem;
+  line-height: 1.55;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.contact-aside__section--accent {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 1.35rem 1.25rem;
+}
+
+.contact-aside__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.contact-aside__link {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-height: 2.85rem;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+.contact-aside__link:hover,
+.contact-aside__link:focus {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
 .resource-article__section {
@@ -4287,6 +4773,15 @@ body[data-page="company-compliance"] .resource-article__ordered {
   color: #f5f5f5;
 }
 
+[data-bs-theme="dark"] .navbar-toggler {
+  background: #17181b;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-bs-theme="dark"] .navbar-toggler .navbar-toggler-animation span {
+  background: #f5f5f5;
+}
+
 [data-bs-theme="dark"] .report-case-btn {
   background: #212227;
   border-color: #212227;
@@ -4444,6 +4939,72 @@ body[data-page="company-compliance"] .resource-article__ordered {
 [data-bs-theme="dark"] .resource-article__list,
 [data-bs-theme="dark"] .resource-article__ordered {
   color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .contact-card {
+  background: #171a21;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .contact-card__title,
+[data-bs-theme="dark"] .contact-field__label {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .contact-card__text,
+[data-bs-theme="dark"] .contact-form__note,
+[data-bs-theme="dark"] .contact-form__status {
+  color: #b2b9c5;
+}
+
+[data-bs-theme="dark"] .contact-field__input {
+  background: #101319;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .contact-field__input::placeholder {
+  color: #9ca3af;
+}
+
+[data-bs-theme="dark"] .report-hero__text {
+  color: #b2b9c5;
+}
+
+[data-bs-theme="dark"] .case-overview__card {
+  background: #171a21;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+[data-bs-theme="dark"] .case-overview__card-title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .case-overview__card-text {
+  color: #b2b9c5;
+}
+
+[data-bs-theme="dark"] .report-form__secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .report-form__choice-card {
+  background: #101319;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-bs-theme="dark"] .report-form__choice-card span {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .report-form__secondary:hover,
+[data-bs-theme="dark"] .report-form__secondary:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #f3f4f6;
 }
 
 [data-bs-theme="dark"] .resource-article__list strong,
@@ -4744,8 +5305,67 @@ body[data-page="company-compliance"] .resource-article__ordered {
 }
 
 @media (min-width: 1200px) {
+  .navbar > .container {
+    column-gap: clamp(0.5rem, 0.75vw, 1rem);
+  }
+
+  .navbar-collapse {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .navbar-nav {
+    flex-wrap: nowrap;
+    gap: 0.05rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.98rem;
+    padding-inline: clamp(0.68rem, 0.8vw, 0.95rem);
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+    gap: 0.25rem;
+    margin-left: clamp(0.35rem, 0.55vw, 0.7rem);
+  }
+
+  .header-actions .report-case-btn,
+  .header-actions .contact-btn {
+    align-items: center;
+    display: inline-flex !important;
+    justify-content: center;
+  }
+
   .navbar-nav .dropdown-menu {
     animation: dropdownLift 0.22s ease;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  .theme-toggle-btn {
+    padding-inline: 0.4rem !important;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.96rem;
+    padding-inline: 0.8rem;
+  }
+
+  .header-actions {
+    gap: 0.2rem;
+  }
+
+  .report-case-btn {
+    padding-inline: 0.85rem;
+  }
+
+  .contact-btn {
+    padding-inline: 1.25rem;
   }
 }
 
@@ -4763,11 +5383,11 @@ body[data-page="company-compliance"] .resource-article__ordered {
   }
 
   .navbar-brand {
-    padding: 18px 0;
+    padding: 16px 0;
   }
 
   .navbar-brand .navbar-brand-item {
-    height: 38px !important;
+    height: 36px !important;
   }
 
   .navbar-collapse {
@@ -4816,11 +5436,28 @@ body[data-page="company-compliance"] .resource-article__ordered {
 
   .header-actions {
     gap: 0.15rem;
+    margin-left: auto;
+    flex-wrap: nowrap;
   }
 
   .header-actions .report-case-btn,
   .header-actions .contact-btn {
     display: none;
+  }
+
+  .navbar-toggler {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid rgba(55, 65, 81, 0.16);
+    border-radius: 12px;
+    display: inline-flex !important;
+    justify-content: center;
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  .navbar-toggler .navbar-toggler-animation span {
+    background: #111827;
   }
 
   .mobile-nav-cta .report-case-btn,
@@ -5022,6 +5659,26 @@ body[data-page="company-compliance"] .resource-article__ordered {
     padding-bottom: 5.2rem;
   }
 
+  .operations-grid,
+  .plant-operate .operations-grid {
+    gap: 1rem;
+    grid-template-areas:
+      "compliance human"
+      "quality plant";
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .operations-card,
+  .plant-operate .operations-card {
+    min-height: 24rem;
+    padding: 2rem 1.85rem 1.95rem;
+  }
+
+  .operations-card__title,
+  .operations-card__text {
+    max-width: 100%;
+  }
+
   .project-cta {
     padding-bottom: 3.6rem;
   }
@@ -5064,9 +5721,15 @@ body[data-page="company-compliance"] .resource-article__ordered {
     padding-top: 2.8rem;
   }
 
+  .quarry-panels {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 2.75rem;
+  }
+
   .quarry-panel {
-    min-height: 25rem;
-    padding-inline: 3rem;
+    min-height: 0;
+    padding: 3rem 2.5rem 2.4rem;
   }
 
   .quarry-gallery__grid {
@@ -5165,6 +5828,28 @@ body[data-page="company-compliance"] .resource-article__ordered {
 
   .resource-article {
     padding-bottom: 5.15rem;
+  }
+
+  .case-overview__grid,
+  .contact-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-overview__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-report-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-form__choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form__actions {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -5376,10 +6061,14 @@ body[data-page="company-compliance"] .resource-article__ordered {
     background: rgba(17, 24, 39, 0.72);
     border-radius: 999px;
     color: #ffffff;
+    font-size: clamp(1.15rem, 5.8vw, 1.6rem);
     left: 1rem;
+    line-height: 1.05;
+    max-width: calc(100% - 2rem);
     padding: 0.4rem 0.75rem;
     top: 1rem;
     transform: none;
+    white-space: normal;
     writing-mode: horizontal-tb;
   }
 
@@ -5490,6 +6179,38 @@ body[data-page="company-compliance"] .resource-article__ordered {
     padding-bottom: 7rem;
   }
 
+  .case-overview {
+    padding: 3.4rem 0 1.1rem;
+  }
+
+  .case-overview__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .case-report-page {
+    padding: 1.1rem 0 4.2rem;
+  }
+
+  .contact-page {
+    padding: 3.4rem 0 4.2rem;
+  }
+
+  .contact-card {
+    padding: 1.75rem 1.45rem;
+  }
+
+  .report-form__actions {
+    width: 100%;
+  }
+
+  .report-form__actions .btn {
+    width: 100%;
+  }
+
+  .contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+
   .resource-article__list,
   .resource-article__ordered {
     margin-bottom: 1.35rem;
@@ -5508,9 +6229,68 @@ body[data-page="company-compliance"] .resource-article__ordered {
     padding-bottom: 4.2rem;
   }
 
+  .operations-grid,
+  .plant-operate .operations-grid {
+    grid-template-areas:
+      "compliance"
+      "human"
+      "quality"
+      "plant";
+    grid-template-columns: 1fr;
+  }
+
+  .operations-card,
+  .plant-operate .operations-card {
+    min-height: 0;
+    padding: 1.7rem 1.45rem 1.75rem;
+  }
+
+  .operations-card__head {
+    gap: 0.85rem;
+  }
+
+  .operations-card__title {
+    font-size: clamp(1.35rem, 6vw, 1.6rem);
+    max-width: 100%;
+  }
+
+  .operations-card__text {
+    max-width: 100%;
+  }
+
   .operations-card__icon {
     margin-top: 1.9rem;
     width: 3.7rem;
+  }
+
+  .quarry-panels {
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+
+  .quarry-panel {
+    min-height: 0;
+    padding: 2rem 1.5rem 1.8rem;
+  }
+
+  .quarry-panel--light::after {
+    height: 12rem;
+    right: -3rem;
+    top: -2.5rem;
+    width: 12rem;
+  }
+
+  .quarry-panel__title {
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+    margin-bottom: 1.2rem;
+    max-width: 100%;
+  }
+
+  .quarry-panel__text,
+  .quarry-panel__list {
+    font-size: 0.98rem;
+    max-width: 100%;
   }
 
   .project-cta {
@@ -5587,8 +6367,16 @@ body[data-page="company-compliance"] .resource-article__ordered {
     gap: 0.1rem;
   }
 
+  .navbar-brand .navbar-brand-item {
+    height: 32px !important;
+  }
+
   .theme-toggle-btn {
     padding-inline: 0.4rem !important;
+  }
+
+  .theme-toggle-label {
+    display: none;
   }
 
   .hero-carousel,
@@ -5940,6 +6728,22 @@ body[data-page="company-compliance"] .resource-article__ordered {
     padding-bottom: 4.5rem;
   }
 
+  .contact-card {
+    padding: 1.45rem 1.15rem;
+  }
+
+  .report-aside__step {
+    padding: 0.95rem 0.95rem 0.95rem 3.2rem;
+  }
+
+  .contact-card__title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .contact-form__submit {
+    width: 100%;
+  }
+
   .resource-article__title {
     font-size: clamp(1.6rem, 7vw, 2rem);
   }
@@ -5954,6 +6758,11 @@ body[data-page="company-compliance"] .resource-article__ordered {
   .who-intro__list {
     gap: 0.9rem;
     margin-top: 1.45rem;
+  }
+
+  .who-intro__since {
+    font-size: clamp(1rem, 5.5vw, 1.28rem);
+    padding: 0.35rem 0.65rem;
   }
 
   .who-intro__list li {
@@ -5992,6 +6801,19 @@ body[data-page="company-compliance"] .resource-article__ordered {
 
   .operations-card__text {
     font-size: 0.94rem;
+  }
+
+  .quarry-panel {
+    padding: 1.7rem 1.15rem 1.55rem;
+  }
+
+  .quarry-panel__title {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+  }
+
+  .quarry-panel__text,
+  .quarry-panel__list {
+    font-size: 0.96rem;
   }
 
   .project-cta {

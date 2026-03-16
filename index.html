@@ -15,9 +15,14 @@
       document.documentElement.dataset.themePreference = theme;
     }());
   </script>
+  <link rel="preload" as="image" href="/assets/images/conn/home/1.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </noscript>
   <link rel="stylesheet" href="/assets/css/vendor-style.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
@@ -26,21 +31,21 @@
 
   <main>
     <section class="hero-shell">
-      <div id="homeHeroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="false" data-bs-touch="true">
+      <div id="homeHeroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="false" data-bs-touch="true" data-hero-carousel>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="hero-slide" style="background-image: url('assets/images/conn/home/1.JPG');">
+            <div class="hero-slide" style="background-image: url('/assets/images/conn/home/1.JPG');" data-bg="/assets/images/conn/home/1.JPG">
               <div class="bg-overlay bg-linear-overlay"></div>
               <div class="position-relative z-index-2 d-flex flex-column m-auto h-100 hero-copy-wrap">
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-11 col-lg-8 mt-auto">
                       <div class="hero-content">
-                        <h1 class="hero-title text-white mb-2 fs-2 lh-1">Roadworks, Bridges, And Concrete Structures</h1>
-                        <p class="hero-text text-white mb-3 mt-3">
+                        <h1 class="hero-title text-white mb-2">Roadworks, Bridges, And Concrete Structures</h1>
+                        <p class="hero-text text-white my-4">
                           We have a team of experienced and qualified professionals who can help you manage your construction project from start to finish. We also ensure that your project meets all safety and quality standards.
                         </p>
-                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/roadworks-bridges-drainage-and-concrete-structures.html">Learn More <span aria-hidden="true">&rarr;</span></a>
+                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/services/roadworks-bridges-drainage-and-concrete-structures/">Learn More <span aria-hidden="true">&rarr;</span></a>
                       </div>
                     </div>
                   </div>
@@ -50,18 +55,18 @@
           </div>
 
           <div class="carousel-item">
-            <div class="hero-slide" style="background-image: url('assets/images/conn/home/2.JPG');">
+            <div class="hero-slide" data-bg="/assets/images/conn/home/2.JPG">
               <div class="bg-overlay bg-linear-overlay"></div>
               <div class="position-relative z-index-2 d-flex flex-column m-auto h-100 hero-copy-wrap">
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-11 col-lg-8 mt-auto">
                       <div class="hero-content">
-                        <h2 class="hero-title text-white mb-2 lh-1 fs-2">Water Supply And Irrigation Schemes</h2>
-                        <p class="hero-text text-white mb-3 mt-3">
+                        <h2 class="hero-title text-white mb-2">Water Supply And Irrigation Schemes</h2>
+                        <p class="hero-text text-white my-4">
                           Innovative water schemes boost crop yield, optimize reduces, reduce agriculture's carbon footprint, and benefit communities and local economies. They're crucial to tackling water scarcity, mitigating drought, and achieving sustainable agriculture for a brighter future.
                         </p>
-                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/water-supply-and-irrigation-schemes.html">Learn More <span aria-hidden="true">&rarr;</span></a>
+                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/services/water-supply-and-irrigation-schemes/">Learn More <span aria-hidden="true">&rarr;</span></a>
                       </div>
                     </div>
                   </div>
@@ -71,18 +76,18 @@
           </div>
 
           <div class="carousel-item">
-            <div class="hero-slide" style="background-image: url('assets/images/conn/home/3.JPG');">
+            <div class="hero-slide" data-bg="/assets/images/conn/home/3.JPG">
               <div class="bg-overlay bg-linear-overlay"></div>
               <div class="position-relative z-index-2 d-flex flex-column m-auto h-100 hero-copy-wrap">
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-11 col-lg-8 mt-auto">
                       <div class="hero-content">
-                        <h3 class="hero-title text-white mb-2 fs-2 lh-1">Land Reclamation, River Canalization And Dredging</h3>
-                        <p class="hero-text text-white mb-3 mt-3">
+                        <h3 class="hero-title text-white mb-2">Land Reclamation, River Canalization And Dredging</h3>
+                        <p class="hero-text text-white my-4">
                           Hitech understands the vital role that navigable waterways play in fostering economic growth and connectivity. Our Rive Canalization projects aim to optimize water flow, control erosion, and facilitate safe navigation.
                         </p>
-                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/land-reclamation-river-canalization-and-dredging.html">Learn More <span aria-hidden="true">&rarr;</span></a>
+                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/services/land-reclamation-river-canalization-and-dredging/">Learn More <span aria-hidden="true">&rarr;</span></a>
                       </div>
                     </div>
                   </div>
@@ -92,18 +97,18 @@
           </div>
 
           <div class="carousel-item">
-            <div class="hero-slide" style="background-image: url('assets/images/conn/home/4.JPG');">
+            <div class="hero-slide" data-bg="/assets/images/conn/home/4.JPG">
               <div class="bg-overlay bg-linear-overlay"></div>
               <div class="position-relative z-index-2 d-flex flex-column m-auto h-100 hero-copy-wrap">
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-11 col-lg-8 mt-auto">
                       <div class="hero-content">
-                        <h2 class="hero-title text-white mb-2 lh-1 fs-2">Recycling Of Existing Road Layers</h2>
-                        <p class="hero-text text-white mb-3 mt-3">
+                        <h2 class="hero-title text-white mb-2">Recycling Of Existing Road Layers</h2>
+                        <p class="hero-text text-white my-4">
                           We champion sustainable practices, and one of flagship services is the recycling of existing road layers. This innovative approach involves reusing and repurposing existing road materials.
                         </p>
-                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/recycling-of-existing-road-layers.html">Learn More <span aria-hidden="true">&rarr;</span></a>
+                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/services/recycling-of-existing-road-layers/">Learn More <span aria-hidden="true">&rarr;</span></a>
                       </div>
                     </div>
                   </div>
@@ -113,18 +118,18 @@
           </div>
 
           <div class="carousel-item">
-            <div class="hero-slide" style="background-image: url('assets/images/conn/home/5.JPG');">
+            <div class="hero-slide" data-bg="/assets/images/conn/home/5.JPG">
               <div class="bg-overlay bg-linear-overlay"></div>
               <div class="position-relative z-index-2 d-flex flex-column m-auto h-100 hero-copy-wrap">
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-11 col-lg-8 mt-auto">
                       <div class="hero-content">
-                        <h2 class="hero-title text-white mb-2 fs-2  lh-1">Continuously Reinforced Concrete Pavements (CRCP)</h2>
-                        <p class="hero-text text-white mb-3 mt-3">
+                        <h2 class="hero-title text-white mb-2">Continuously Reinforced Concrete Pavements (CRCP)</h2>
+                        <p class="hero-text text-white my-4">
                           Hitech's approach blends on-site professional management with a team of office-based engineering, design and planning experts.
                         </p>
-                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/continuously-reinforced-concrete-pavements.html">Learn More <span aria-hidden="true">&rarr;</span></a>
+                        <a class="btn btn-lg btn-primary hero-btn mb-0" href="/services/continuously-reinforced-concrete-pavements/">Learn More <span aria-hidden="true">&rarr;</span></a>
                       </div>
                     </div>
                   </div>
@@ -136,7 +141,7 @@
       </div>
     </section>
 
-    <section class="about-overview" aria-labelledby="about-overview-title">
+    <section class="about-overview deferred-section" aria-labelledby="about-overview-title">
       <div class="container">
         <div class="row g-4 g-xl-5 align-items-start">
           <div class="col-lg-7 pe-xl-5">
@@ -181,14 +186,14 @@
 
           <div class="col-lg-5">
             <div class="about-overview__media">
-              <img src="assets/images/conn/home/6.JPG" alt="Hitech construction equipment at work on-site" class="about-overview__image" loading="lazy" decoding="async">
+              <img src="/assets/images/conn/home/6.JPG" alt="Hitech construction equipment at work on-site" class="about-overview__image" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="stats-section" aria-label="Company statistics">
+    <section class="stats-section deferred-section" aria-label="Company statistics">
       <div class="container">
         <div class="row g-4 g-lg-5">
           <div class="col-sm-6 col-xl-3">
@@ -230,7 +235,7 @@
       </div>
     </section>
 
-    <section class="services-showcase" aria-labelledby="services-showcase-title">
+    <section class="services-showcase deferred-section" aria-labelledby="services-showcase-title">
       <div class="container">
         <div class="services-showcase__intro">
           <h2 id="services-showcase-title" class="services-showcase__title">What We Do</h2>
@@ -240,12 +245,12 @@
         <div class="row g-4 g-xl-5">
           <div class="col-md-6 col-xl-4">
             <article class="service-card h-100">
-              <a class="service-card__media-link" href="/roadworks-bridges-drainage-and-concrete-structures.html" aria-label="Roadworks, Bridges, Drainage and Concrete Structures">
-                <img src="assets/images/conn/1.jpg" alt="Roadworks and concrete structure construction site" class="service-card__image" loading="lazy" decoding="async">
+              <a class="service-card__media-link" href="/services/roadworks-bridges-drainage-and-concrete-structures/" aria-label="Roadworks, Bridges, Drainage and Concrete Structures">
+                <img src="/assets/images/conn/1.jpg" alt="Roadworks and concrete structure construction site" class="service-card__image" loading="lazy" decoding="async">
               </a>
               <div class="service-card__body">
                 <h3 class="service-card__title">
-                  <a href="/roadworks-bridges-drainage-and-concrete-structures.html">Roadworks, Bridges, Drainage &amp; Concrete Structures</a>
+                  <a href="/services/roadworks-bridges-drainage-and-concrete-structures/">Roadworks, Bridges, Drainage &amp; Concrete Structures</a>
                 </h3>
               </div>
             </article>
@@ -253,12 +258,12 @@
 
           <div class="col-md-6 col-xl-4">
             <article class="service-card h-100">
-              <a class="service-card__media-link" href="/water-supply-and-irrigation-schemes.html" aria-label="Water Supply and Irrigation Schemes">
-                <img src="assets/images/conn/home/3.JPG" alt="Water supply and irrigation scheme project on the water" class="service-card__image" loading="lazy" decoding="async">
+              <a class="service-card__media-link" href="/services/water-supply-and-irrigation-schemes/" aria-label="Water Supply and Irrigation Schemes">
+                <img src="/assets/images/conn/home/3.JPG" alt="Water supply and irrigation scheme project on the water" class="service-card__image" loading="lazy" decoding="async">
               </a>
               <div class="service-card__body">
                 <h3 class="service-card__title">
-                  <a href="/water-supply-and-irrigation-schemes.html">Water Supply &amp; Irrigation Schemes</a>
+                  <a href="/services/water-supply-and-irrigation-schemes/">Water Supply &amp; Irrigation Schemes</a>
                 </h3>
               </div>
             </article>
@@ -266,12 +271,12 @@
 
           <div class="col-md-6 col-xl-4">
             <article class="service-card h-100">
-              <a class="service-card__media-link" href="/land-reclamation-river-canalization-and-dredging.html" aria-label="Land Reclamation, River Canalization and Dredging">
-                <img src="assets/images/conn/plant.jpg" alt="Land reclamation and dredging equipment at a project site" class="service-card__image" loading="lazy" decoding="async">
+              <a class="service-card__media-link" href="/services/land-reclamation-river-canalization-and-dredging/" aria-label="Land Reclamation, River Canalization and Dredging">
+                <img src="/assets/images/conn/plant.jpg" alt="Land reclamation and dredging equipment at a project site" class="service-card__image" loading="lazy" decoding="async">
               </a>
               <div class="service-card__body">
                 <h3 class="service-card__title">
-                  <a href="/land-reclamation-river-canalization-and-dredging.html">Land Reclamation, River Canalization &amp; Dredging</a>
+                  <a href="/services/land-reclamation-river-canalization-and-dredging/">Land Reclamation, River Canalization &amp; Dredging</a>
                 </h3>
               </div>
             </article>
@@ -279,12 +284,12 @@
 
           <div class="col-md-6 col-xl-4">
             <article class="service-card h-100">
-              <a class="service-card__media-link" href="/foam-bitumen-stabilised-materials.html" aria-label="Foam Bitumen Stabilised Materials">
-                <img src="assets/images/conn/home/5.JPG" alt="Foam bitumen stabilised materials road construction process" class="service-card__image" loading="lazy" decoding="async">
+              <a class="service-card__media-link" href="/services/foam-bitumen-stabilised-materials/" aria-label="Foam Bitumen Stabilised Materials">
+                <img src="/assets/images/conn/home/5.JPG" alt="Foam bitumen stabilised materials road construction process" class="service-card__image" loading="lazy" decoding="async">
               </a>
               <div class="service-card__body">
                 <h3 class="service-card__title">
-                  <a href="/foam-bitumen-stabilised-materials.html">Foam Bitumen Stabilised Materials</a>
+                  <a href="/services/foam-bitumen-stabilised-materials/">Foam Bitumen Stabilised Materials</a>
                 </h3>
               </div>
             </article>
@@ -292,12 +297,12 @@
 
           <div class="col-md-6 col-xl-4">
             <article class="service-card h-100">
-              <a class="service-card__media-link" href="/recycling-of-existing-road-layers.html" aria-label="Recycling Of Existing Road Layers">
-                <img src="assets/images/conn/home/4.JPG" alt="Recycling of existing road layers work in progress" class="service-card__image" loading="lazy" decoding="async">
+              <a class="service-card__media-link" href="/services/recycling-of-existing-road-layers/" aria-label="Recycling Of Existing Road Layers">
+                <img src="/assets/images/conn/home/4.JPG" alt="Recycling of existing road layers work in progress" class="service-card__image" loading="lazy" decoding="async">
               </a>
               <div class="service-card__body">
                 <h3 class="service-card__title">
-                  <a href="/recycling-of-existing-road-layers.html">Recycling Of Existing Road Layers</a>
+                  <a href="/services/recycling-of-existing-road-layers/">Recycling Of Existing Road Layers</a>
                 </h3>
               </div>
             </article>
@@ -305,12 +310,12 @@
 
           <div class="col-md-6 col-xl-4">
             <article class="service-card h-100">
-              <a class="service-card__media-link" href="/continuously-reinforced-concrete-pavements.html" aria-label="Continuously Reinforced Concrete Pavements Crcp">
-                <img src="assets/images/conn/operations-1.JPG" alt="Continuously reinforced concrete pavements construction workers on site" class="service-card__image" loading="lazy" decoding="async">
+              <a class="service-card__media-link" href="/services/continuously-reinforced-concrete-pavements/" aria-label="Continuously Reinforced Concrete Pavements Crcp">
+                <img src="/assets/images/conn/operations-1.JPG" alt="Continuously reinforced concrete pavements construction workers on site" class="service-card__image" loading="lazy" decoding="async">
               </a>
               <div class="service-card__body">
                 <h3 class="service-card__title">
-                  <a href="/continuously-reinforced-concrete-pavements.html">Continuously Reinforced Concrete Pavements (Crcp)</a>
+                  <a href="/services/continuously-reinforced-concrete-pavements/">Continuously Reinforced Concrete Pavements (Crcp)</a>
                 </h3>
               </div>
             </article>
@@ -326,7 +331,6 @@
           class="video-feature__iframe"
           src="https://www.youtube.com/embed/Gw_UqgBsmYA?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=Gw_UqgBsmYA&amp;playsinline=1&amp;rel=0&amp;modestbranding=1"
           title="Hitech Construction video showcase"
-          loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
@@ -335,14 +339,14 @@
       </div>
     </section>
 
-    <section class="projects-showcase" aria-labelledby="projects-showcase-title">
+    <section class="projects-showcase deferred-section" aria-labelledby="projects-showcase-title">
       <div class="container">
         <div class="projects-showcase__header">
           <div class="projects-showcase__intro">
             <h2 id="projects-showcase-title" class="projects-showcase__title">Showcasing Recent Projects</h2>
             <p class="projects-showcase__subtitle">Discover a selection of our most recent client projects, showcasing our expertise, creativity, and commitment to delivering outstanding results.</p>
           </div>
-          <a href="#" class="btn btn-primary projects-showcase__cta">View All Projects</a>
+          <a href="/projects/republic-of-nigeria/" class="btn btn-primary projects-showcase__cta">View All Projects</a>
         </div>
 
         <div class="row g-4 g-lg-5 align-items-start">
@@ -361,8 +365,8 @@
           <div class="col-lg-9">
             <div class="projects-grid" data-projects-grid>
               <article class="project-tile project-tile--1" data-project-location="nigeria">
-                <a href="/lagos-calabar-coastal-highway-project.html" class="project-tile__link" aria-label="Lagos-Calabar Coastal Highway project in Nigeria">
-                  <img src="assets/images/conn/home/4.JPG" alt="Aerial view of the Lagos-Calabar Coastal Highway project corridor in Nigeria" class="project-tile__image" loading="lazy" decoding="async">
+                <a href="/projects/lagos-calabar-coastal-highway-project/" class="project-tile__link" aria-label="Lagos-Calabar Coastal Highway project in Nigeria">
+                  <img src="/assets/images/conn/home/4.JPG" alt="Aerial view of the Lagos-Calabar Coastal Highway project corridor in Nigeria" class="project-tile__image" loading="lazy" decoding="async">
                   <div class="project-tile__meta">
                     <span class="project-tile__location">Nigeria</span>
                     <span class="project-tile__name">Lagos-Calabar Coastal Highway</span>
@@ -371,28 +375,28 @@
               </article>
 
               <article class="project-tile project-tile--2" data-project-location="togo">
-                <a href="#" class="project-tile__link" aria-label="Recent project in Togo">
-                  <img src="assets/images/conn/operations-2.JPG" alt="Airport-side infrastructure project delivered by Hitech in Togo" class="project-tile__image" loading="lazy" decoding="async">
+                <a href="/projects/republic-of-togo/" class="project-tile__link" aria-label="National Route NR14 rehabilitation project in Togo">
+                  <img src="/assets/images/republic-togo/gallery-1.jpg" alt="Earthworks and site preparation for the National Route NR14 rehabilitation project in Togo" class="project-tile__image" loading="lazy" decoding="async">
                   <div class="project-tile__meta">
                     <span class="project-tile__location">Togo</span>
-                    <span class="project-tile__name">Terminal Access Project</span>
+                    <span class="project-tile__name">National Route NR14 Rehabilitation</span>
                   </div>
                 </a>
               </article>
 
               <article class="project-tile project-tile--3" data-project-location="benin">
-                <a href="#" class="project-tile__link" aria-label="Recent project in Benin">
-                  <img src="assets/images/conn/1.jpg" alt="Construction site for a recent Hitech project in Benin" class="project-tile__image" loading="lazy" decoding="async">
+                <a href="/projects/republic-of-benin/" class="project-tile__link" aria-label="Cotonou Fisheries Road Development Project in Benin">
+                  <img src="/assets/images/republic-benin/gallery-1.jpeg" alt="Coastal construction works for the Cotonou Fisheries Road Development Project in Benin" class="project-tile__image" loading="lazy" decoding="async">
                   <div class="project-tile__meta">
                     <span class="project-tile__location">Benin</span>
-                    <span class="project-tile__name">Foundation Works Project</span>
+                    <span class="project-tile__name">Cotonou Fisheries Road Development</span>
                   </div>
                 </a>
               </article>
 
               <article class="project-tile project-tile--4" data-project-location="nigeria">
                 <a href="#" class="project-tile__link" aria-label="Another recent project in Nigeria">
-                  <img src="assets/images/conn/home/6.JPG" alt="Earthworks and excavation project carried out by Hitech in Nigeria" class="project-tile__image" loading="lazy" decoding="async">
+                  <img src="/assets/images/conn/home/6.JPG" alt="Earthworks and excavation project carried out by Hitech in Nigeria" class="project-tile__image" loading="lazy" decoding="async">
                   <div class="project-tile__meta">
                     <span class="project-tile__location">Nigeria</span>
                     <span class="project-tile__name">Earthworks Development</span>
@@ -401,11 +405,11 @@
               </article>
 
               <article class="project-tile project-tile--5" data-project-location="benin">
-                <a href="#" class="project-tile__link" aria-label="Another recent project in Benin">
-                  <img src="assets/images/conn/home/5.JPG" alt="Road construction project delivered by Hitech in Benin" class="project-tile__image" loading="lazy" decoding="async">
+                <a href="/projects/republic-of-benin/" class="project-tile__link" aria-label="Fidjrosse Beach development corridor in Benin">
+                  <img src="/assets/images/republic-benin/gallery-2.jpeg" alt="Concept visual for the Fidjrosse Beach development corridor in Benin" class="project-tile__image" loading="lazy" decoding="async">
                   <div class="project-tile__meta">
                     <span class="project-tile__location">Benin</span>
-                    <span class="project-tile__name">Roadworks Delivery</span>
+                    <span class="project-tile__name">Fidjrosse Beach Development</span>
                   </div>
                 </a>
               </article>
@@ -415,7 +419,7 @@
       </div>
     </section>
 
-    <section class="partners-showcase" aria-labelledby="partners-showcase-title">
+    <section class="partners-showcase deferred-section" aria-labelledby="partners-showcase-title">
       <div class="container">
         <div class="partners-showcase__intro">
           <h2 id="partners-showcase-title" class="partners-showcase__title">See Our Partners</h2>
@@ -431,29 +435,29 @@
         <div class="partners-carousel" data-partners-carousel aria-label="Key partners">
           <ul class="partners-track" role="list" data-partners-track>
             <li class="partner-logo">
-              <img src="assets/images/partners/lagos.png" alt="Lagos State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
+              <img src="/assets/images/partners/lagos.png" alt="Lagos State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
             </li>
             <li class="partner-logo">
-              <img src="assets/images/partners/dangote.png" alt="Dangote Cement logo" class="partner-logo__image" loading="lazy" decoding="async">
+              <img src="/assets/images/partners/dangote.png" alt="Dangote Cement logo" class="partner-logo__image" loading="lazy" decoding="async">
             </li>
             <li class="partner-logo">
-              <img src="assets/images/partners/bexa.png" alt="BExA partner logo" class="partner-logo__image" loading="lazy" decoding="async">
+              <img src="/assets/images/partners/bexa.png" alt="BExA partner logo" class="partner-logo__image" loading="lazy" decoding="async">
             </li>
             <li class="partner-logo">
-              <img src="assets/images/partners/edo-logo.png" alt="Edo State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
+              <img src="/assets/images/partners/edo-logo.png" alt="Edo State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
             </li>
             <li class="partner-logo">
-              <img src="assets/images/partners/oyo.png" alt="Oyo State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
+              <img src="/assets/images/partners/oyo.png" alt="Oyo State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
             </li>
             <li class="partner-logo">
-              <img src="assets/images/partners/ogun.png" alt="Ogun State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
+              <img src="/assets/images/partners/ogun.png" alt="Ogun State Government logo" class="partner-logo__image" loading="lazy" decoding="async">
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="project-cta" aria-labelledby="project-cta-title">
+    <section class="project-cta deferred-section" aria-labelledby="project-cta-title">
       <div class="container">
         <div class="project-cta__card">
           <div class="row align-items-center g-4 g-xl-5 position-relative">
@@ -467,7 +471,7 @@
             </div>
 
             <div class="col-lg-4 ms-lg-auto">
-              <a href="#" class="btn btn-primary project-cta__button">Contact Us</a>
+              <a href="/contact/" class="btn btn-primary project-cta__button">Contact Us</a>
             </div>
           </div>
         </div>

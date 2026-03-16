@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Hitech Construction Company Limited</title>
+  <meta name="description" content="Get in touch with Hitech Construction Company Limited for project consultations, partnerships, and general inquiries.">
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = storedTheme || "auto";
+      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
+      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
+      document.documentElement.dataset.themePreference = theme;
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/vendor-style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="contact">
+  <div data-include="/partials/site-header.html"></div>
+
+  <main>
+    <section class="resource-hero">
+      <div class="container">
+        <div class="resource-hero__frame">
+          <div class="resource-hero__media">
+            <img src="/assets/images/conn/operations-2.JPG" alt="Hitech team coordinating a major construction project" class="resource-hero__image resource-hero__image--compliance" loading="lazy" decoding="async">
+          </div>
+          <div class="resource-hero__card">
+            <h1 class="resource-hero__title">Talk to Hitech About Your Next Project</h1>
+            <div class="resource-hero__meta">
+              <span>Project consultations</span>
+              <span class="resource-hero__meta-divider" aria-hidden="true"></span>
+              <span>Regional support across Lagos, Abuja, Ibadan, and Benin City</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-page">
+      <div class="container">
+        <div class="contact-page__grid">
+          <div class="contact-card contact-card--form">
+            <div class="contact-card__intro">
+              <span class="contact-card__eyebrow">Send your brief</span>
+              <h2 class="contact-card__title">Share the details and our team will follow up.</h2>
+              <p class="contact-card__text">
+                Use this form for project inquiries, partnership conversations, procurement introductions, or general questions about Hitech's operations and services.
+              </p>
+            </div>
+
+            <form class="contact-form" action="/api/contact.php" method="post" data-contact-form novalidate>
+              <input type="hidden" name="redirect" value="/contact/">
+              <input type="hidden" name="source_page" value="/contact/">
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="contact-company-name">Company name</label>
+                <input id="contact-company-name" type="text" name="company_name" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="contact-form__grid">
+                <label class="contact-field">
+                  <span class="contact-field__label">Full name</span>
+                  <input class="contact-field__input" type="text" name="full_name" autocomplete="name" required>
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Email address</span>
+                  <input class="contact-field__input" type="email" name="email" autocomplete="email" required>
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Phone number</span>
+                  <input class="contact-field__input" type="tel" name="phone" autocomplete="tel">
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Company</span>
+                  <input class="contact-field__input" type="text" name="company" autocomplete="organization">
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Inquiry type</span>
+                  <select class="contact-field__input contact-field__select" name="inquiry_type">
+                    <option value="General project inquiry">General project inquiry</option>
+                    <option value="Partnership opportunity">Partnership opportunity</option>
+                    <option value="Procurement or supplier inquiry">Procurement or supplier inquiry</option>
+                    <option value="Press or media request">Press or media request</option>
+                    <option value="Careers follow-up">Careers follow-up</option>
+                  </select>
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Project location</span>
+                  <input class="contact-field__input" type="text" name="project_location" placeholder="City, state, or corridor">
+                </label>
+              </div>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">How can we help?</span>
+                <textarea class="contact-field__input contact-field__textarea" name="message" rows="6" required></textarea>
+              </label>
+
+              <div class="contact-form__actions">
+                <button class="btn btn-primary contact-form__submit" type="submit">Send Inquiry</button>
+                <p class="contact-form__note">We review project and corporate inquiries carefully and aim to respond as soon as possible.</p>
+              </div>
+            </form>
+
+            <p class="contact-form__status" data-contact-status aria-live="polite"></p>
+          </div>
+
+          <aside class="contact-card contact-card--aside" aria-label="Contact guidance">
+            <div class="contact-aside__section">
+              <span class="contact-card__eyebrow">How to reach us</span>
+              <h2 class="contact-card__title contact-card__title--aside">One contact path for every inquiry.</h2>
+              <p class="contact-card__text">
+                Start with the form and route your message to the right team from a single place. This helps us capture the project details properly before responding.
+              </p>
+            </div>
+
+            <div class="contact-aside__section">
+              <h3 class="contact-aside__title">Operational Presence</h3>
+              <ul class="contact-aside__list" role="list">
+                <li>Lagos headquarters supporting national delivery and executive coordination.</li>
+                <li>Regional presence in Abuja, Ibadan, and Benin City for wider project coverage.</li>
+                <li>Experience supporting roadworks, bridges, marine, water, and plant operations.</li>
+              </ul>
+            </div>
+
+            <div class="contact-aside__section contact-aside__section--accent">
+              <h3 class="contact-aside__title">Need a compliance-specific channel?</h3>
+              <p class="contact-card__text">
+                For dedicated grievance and compliance communication, you can also use the established channels published on our compliance and quality pages.
+              </p>
+              <div class="contact-aside__links">
+                <a href="/about/company-compliance/" class="contact-aside__link">Company Compliance</a>
+                <a href="/about/quality-safety-and-environment/" class="contact-aside__link">Quality, Safety &amp; Environment</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/site-footer.html"></div>
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,902 @@
+.nigeria-hero,
+.nigeria-spectrum,
+.nigeria-browser {
+  position: relative;
+}
+
+.nigeria-spectrum,
+.nigeria-browser {
+  contain-intrinsic-size: 1px 1000px;
+  content-visibility: auto;
+}
+
+.nigeria-hero {
+  overflow: clip;
+  padding: 8.6rem 0 4rem;
+}
+
+.nigeria-hero::before,
+.nigeria-hero::after {
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+}
+
+.nigeria-hero::before {
+  background: radial-gradient(circle, rgba(30, 107, 72, 0.16) 0%, rgba(30, 107, 72, 0) 72%);
+  height: 34rem;
+  right: -9rem;
+  top: -8rem;
+  width: 34rem;
+}
+
+.nigeria-hero::after {
+  background: radial-gradient(circle, rgba(191, 34, 2, 0.12) 0%, rgba(191, 34, 2, 0) 70%);
+  bottom: -10rem;
+  height: 30rem;
+  left: -8rem;
+  width: 30rem;
+}
+
+.nigeria-hero__shell {
+  background: linear-gradient(145deg, rgba(244, 239, 228, 0.98) 0%, rgba(255, 255, 255, 0.98) 48%, rgba(236, 245, 239, 0.98) 100%);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 34px 90px rgba(15, 23, 42, 0.12);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.6rem);
+  position: relative;
+}
+
+.nigeria-hero__shell::before {
+  background: linear-gradient(90deg, rgba(17, 24, 39, 0.04) 1px, transparent 1px), linear-gradient(rgba(17, 24, 39, 0.04) 1px, transparent 1px);
+  background-size: 3.8rem 3.8rem;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(140deg, rgba(0, 0, 0, 0.42), transparent 72%);
+  pointer-events: none;
+  position: absolute;
+}
+
+.nigeria-hero__content,
+.nigeria-hero__media {
+  position: relative;
+  z-index: 1;
+}
+
+.nigeria-hero__content {
+  align-self: center;
+  max-width: 35rem;
+  padding: 0.5rem 0 0.75rem;
+}
+
+.nigeria-hero__eyebrow,
+.nigeria-section-heading__eyebrow,
+.nigeria-spectrum-card__label,
+.nigeria-hero__mini-kicker,
+.nigeria-gallery-card__region,
+.nigeria-gallery-card__discipline,
+.nigeria-chip {
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nigeria-hero__eyebrow,
+.nigeria-section-heading__eyebrow {
+  color: var(--site-primary);
+  margin: 0 0 0.9rem;
+}
+
+.nigeria-hero__title,
+.nigeria-section-heading__title {
+  color: #111827;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  margin: 0;
+}
+
+.nigeria-hero__title {
+  font-size: clamp(3.4rem, 8vw, 6.6rem);
+  text-transform: uppercase;
+}
+
+.nigeria-section-heading {
+  margin: 0 auto 2.2rem;
+  max-width: 45rem;
+  text-align: center;
+}
+
+.nigeria-section-heading--left {
+  margin: 0;
+  max-width: 41rem;
+  text-align: left;
+}
+
+.nigeria-section-heading__title {
+  font-size: clamp(2.2rem, 3.2vw, 4rem);
+  line-height: 1.02;
+  margin-bottom: 1rem;
+}
+
+.nigeria-section-heading__title-button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.nigeria-section-heading__title-button:hover,
+.nigeria-section-heading__title-button:focus {
+  color: var(--site-primary);
+  transform: translateY(-1px);
+}
+
+.nigeria-hero__text,
+.nigeria-section-heading__text,
+.nigeria-spectrum-card__text,
+.nigeria-gallery-card__text,
+.nigeria-hero__feature-text,
+.nigeria-hero__stat-label {
+  color: #4f5a69;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.nigeria-hero__text {
+  font-size: 1.06rem;
+  margin-top: 1.25rem;
+}
+
+.nigeria-hero__stats {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.6rem;
+}
+
+.nigeria-hero__stat {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 20px;
+  min-height: 100%;
+  padding: 1.15rem 1.05rem;
+}
+
+.nigeria-hero__stat--accent {
+  background: linear-gradient(180deg, rgba(30, 107, 72, 0.12) 0%, rgba(255, 255, 255, 0.82) 100%);
+}
+
+.nigeria-hero__stat-value {
+  color: #111827;
+  display: block;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.nigeria-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.nigeria-hero__button {
+  align-items: center;
+  background: #111827;
+  border: 1px solid #111827;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.55rem 1.15rem;
+  text-decoration: none;
+  transition: background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+
+.nigeria-hero__button:hover,
+.nigeria-hero__button:focus {
+  background: #1f2937;
+  border-color: #1f2937;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.nigeria-hero__button--ghost {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(17, 24, 39, 0.1);
+  color: #111827;
+}
+
+.nigeria-hero__button--ghost:hover,
+.nigeria-hero__button--ghost:focus {
+  background: #ffffff;
+  border-color: rgba(17, 24, 39, 0.18);
+  color: #111827;
+}
+
+.nigeria-hero__media {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(14.5rem, 0.9fr);
+}
+
+.nigeria-hero__feature-card,
+.nigeria-hero__mini-card,
+.nigeria-spectrum-card,
+.nigeria-browser__frame,
+.nigeria-gallery-card {
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12);
+}
+
+.nigeria-hero__feature-card {
+  background: #111827;
+  border-radius: 28px;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.nigeria-hero__feature-card::after,
+.nigeria-gallery-card__frame::after {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.04) 8%, rgba(15, 23, 42, 0.84) 100%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.nigeria-hero__feature-image,
+.nigeria-hero__mini-image,
+.nigeria-spectrum-card__image,
+.nigeria-gallery-card__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.nigeria-hero__feature-image {
+  aspect-ratio: 5 / 6.2;
+}
+
+.nigeria-chip {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #ffffff;
+  margin-bottom: 0.85rem;
+  padding: 0.42rem 0.72rem;
+}
+
+.nigeria-hero__feature-body {
+  bottom: 0;
+  color: #ffffff;
+  left: 0;
+  padding: 1.4rem 1.45rem 1.5rem;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.nigeria-hero__feature-title,
+.nigeria-spectrum-card__title,
+.nigeria-gallery-card__title,
+.nigeria-hero__mini-title {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.nigeria-hero__feature-title {
+  color: #ffffff;
+  font-size: clamp(1.7rem, 2.3vw, 2.6rem);
+  margin-bottom: 0.55rem;
+}
+
+.nigeria-hero__feature-text {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.nigeria-hero__stack {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.nigeria-hero__mini-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.nigeria-hero__mini-card--offset {
+  margin-left: 1.25rem;
+}
+
+.nigeria-hero__mini-image {
+  aspect-ratio: 4 / 3.3;
+}
+
+.nigeria-hero__mini-body {
+  padding: 1rem 1rem 1.05rem;
+}
+
+.nigeria-hero__mini-kicker {
+  color: #1e6b48;
+  margin-bottom: 0.55rem;
+}
+
+.nigeria-hero__mini-title {
+  color: #111827;
+  font-size: 1.18rem;
+}
+
+.nigeria-spectrum {
+  padding: 0 0 4.6rem;
+}
+
+.nigeria-spectrum__grid {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.nigeria-spectrum-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f5 100%);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.nigeria-spectrum-card--accent {
+  background: linear-gradient(180deg, #faf6ef 0%, #ffffff 100%);
+}
+
+.nigeria-spectrum-card__image {
+  aspect-ratio: 16 / 10.8;
+}
+
+.nigeria-spectrum-card__body {
+  padding: 1.35rem 1.35rem 1.45rem;
+}
+
+.nigeria-spectrum-card__label {
+  color: #1e6b48;
+  margin-bottom: 0.7rem;
+}
+
+.nigeria-spectrum-card__title {
+  color: #111827;
+  font-size: 1.42rem;
+  margin-bottom: 0.75rem;
+}
+
+.nigeria-browser {
+  padding: 0 0 6rem;
+}
+
+.nigeria-browser__frame {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7f6 100%);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 30px;
+  overflow: hidden;
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.nigeria-browser__top {
+  align-items: end;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.85rem;
+}
+
+.nigeria-spotlight {
+  background: linear-gradient(135deg, #171b23 0%, #1d2630 58%, #143224 100%);
+  border-radius: 26px;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  margin-bottom: 1.35rem;
+  overflow: hidden;
+}
+
+.nigeria-spotlight__media {
+  min-height: 100%;
+}
+
+.nigeria-spotlight__image {
+  display: block;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.nigeria-spotlight__body {
+  align-self: center;
+  color: #ffffff;
+  padding: 1.5rem 1.5rem 1.6rem 0;
+}
+
+.nigeria-spotlight__eyebrow,
+.nigeria-spotlight__fact-label {
+  color: rgba(255, 255, 255, 0.72);
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nigeria-spotlight__eyebrow {
+  margin: 0 0 0.75rem;
+}
+
+.nigeria-spotlight__title {
+  color: #ffffff;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: clamp(1.8rem, 2.1vw, 2.65rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+  margin: 0 0 0.75rem;
+}
+
+.nigeria-spotlight__text {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.nigeria-spotlight__facts {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.3rem;
+}
+
+.nigeria-spotlight__fact {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 0.95rem 0.95rem 1rem;
+}
+
+.nigeria-spotlight__fact-label {
+  margin-bottom: 0.5rem;
+}
+
+.nigeria-spotlight__fact-value {
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.nigeria-spotlight__actions {
+  margin-top: 1.25rem;
+}
+
+.nigeria-spotlight__link {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.55rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+
+.nigeria-spotlight__link:hover,
+.nigeria-spotlight__link:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.nigeria-filter {
+  align-items: center;
+  background: #eef2ef;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 999px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.35rem;
+}
+
+.nigeria-filter__button {
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: #52606d;
+  cursor: pointer;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  min-height: 3rem;
+  padding: 0.68rem 1.05rem;
+  transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+
+.nigeria-filter__button:hover,
+.nigeria-filter__button:focus {
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.nigeria-filter__button.is-active {
+  background: #111827;
+  color: #ffffff;
+}
+
+.nigeria-gallery__grid {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.nigeria-gallery__grid.projects-grid--filtered {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.nigeria-gallery-card {
+  background: #111827;
+  border-radius: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.nigeria-gallery-card[hidden] {
+  display: none !important;
+}
+
+.nigeria-gallery-card--feature {
+  grid-column: span 7;
+}
+
+.nigeria-gallery-card--hero-secondary {
+  grid-column: span 5;
+}
+
+.nigeria-gallery-card--wide {
+  grid-column: span 6;
+}
+
+.nigeria-gallery-card--standard,
+.nigeria-gallery-card--tall {
+  grid-column: span 4;
+}
+
+.nigeria-gallery-card__frame {
+  position: relative;
+}
+
+.nigeria-gallery-card__image {
+  transition: transform 0.32s ease;
+}
+
+.nigeria-gallery-card--feature .nigeria-gallery-card__image {
+  aspect-ratio: 16 / 12;
+}
+
+.nigeria-gallery-card--hero-secondary .nigeria-gallery-card__image {
+  aspect-ratio: 16 / 12.8;
+}
+
+.nigeria-gallery-card--wide .nigeria-gallery-card__image {
+  aspect-ratio: 16 / 9.2;
+}
+
+.nigeria-gallery-card--standard .nigeria-gallery-card__image {
+  aspect-ratio: 4 / 3.15;
+}
+
+.nigeria-gallery-card--tall .nigeria-gallery-card__image {
+  aspect-ratio: 4 / 4.8;
+}
+
+.nigeria-gallery-card__overlay {
+  bottom: 0;
+  left: 0;
+  padding: 1.15rem 1.15rem 1.2rem;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.nigeria-gallery-card__meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.nigeria-gallery-card__region,
+.nigeria-gallery-card__discipline {
+  border-radius: 999px;
+  padding: 0.35rem 0.58rem;
+}
+
+.nigeria-gallery-card__region {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.nigeria-gallery-card__discipline {
+  background: rgba(30, 107, 72, 0.2);
+  color: #d9f4e7;
+}
+
+.nigeria-gallery-card--regional .nigeria-gallery-card__discipline {
+  background: rgba(191, 34, 2, 0.22);
+  color: #ffe1d6;
+}
+
+.nigeria-gallery-card__title {
+  color: #ffffff;
+  font-size: 1.34rem;
+  margin-bottom: 0.45rem;
+}
+
+.nigeria-gallery-card__text {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.nigeria-gallery-card.is-active {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18), 0 22px 48px rgba(15, 23, 42, 0.18);
+  transform: translateY(-2px);
+}
+
+.nigeria-gallery-card:hover .nigeria-gallery-card__image,
+.nigeria-gallery-card:focus-within .nigeria-gallery-card__image {
+  transform: scale(1.03);
+}
+
+.nigeria-gallery-card:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.44);
+  outline-offset: 3px;
+}
+
+.nigeria-gallery__grid.projects-grid--filtered .nigeria-gallery-card {
+  grid-column: span 1 !important;
+}
+
+[data-bs-theme="dark"] .nigeria-hero__shell {
+  background: linear-gradient(145deg, #161b23 0%, #111827 52%, #14221b 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+[data-bs-theme="dark"] .nigeria-hero__title,
+[data-bs-theme="dark"] .nigeria-section-heading__title,
+[data-bs-theme="dark"] .nigeria-spectrum-card__title,
+[data-bs-theme="dark"] .nigeria-hero__mini-title {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .nigeria-hero__text,
+[data-bs-theme="dark"] .nigeria-section-heading__text,
+[data-bs-theme="dark"] .nigeria-spectrum-card__text,
+[data-bs-theme="dark"] .nigeria-hero__stat-label {
+  color: #cfd5de;
+}
+
+[data-bs-theme="dark"] .nigeria-hero__stat,
+[data-bs-theme="dark"] .nigeria-hero__mini-card,
+[data-bs-theme="dark"] .nigeria-spectrum-card,
+[data-bs-theme="dark"] .nigeria-browser__frame {
+  background: rgba(17, 24, 39, 0.88);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+[data-bs-theme="dark"] .nigeria-hero__stat-value {
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .nigeria-filter {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .nigeria-filter__button {
+  color: #d3d8e0;
+}
+
+[data-bs-theme="dark"] .nigeria-filter__button.is-active,
+[data-bs-theme="dark"] .nigeria-hero__button {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #f3f4f6;
+}
+
+[data-bs-theme="dark"] .nigeria-section-heading__title-button:hover,
+[data-bs-theme="dark"] .nigeria-section-heading__title-button:focus {
+  color: #f97362;
+}
+
+[data-bs-theme="dark"] .nigeria-hero__button:hover,
+[data-bs-theme="dark"] .nigeria-hero__button:focus {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-bs-theme="dark"] .nigeria-hero__button--ghost {
+  background: rgba(30, 107, 72, 0.18);
+  border-color: rgba(30, 107, 72, 0.22);
+}
+
+[data-bs-theme="dark"] .nigeria-hero__button--ghost:hover,
+[data-bs-theme="dark"] .nigeria-hero__button--ghost:focus {
+  background: rgba(30, 107, 72, 0.26);
+  border-color: rgba(30, 107, 72, 0.32);
+}
+
+@media (max-width: 1199.98px) {
+  .nigeria-hero__shell {
+    grid-template-columns: 1fr;
+  }
+
+  .nigeria-hero__content {
+    max-width: none;
+  }
+
+  .nigeria-hero__media {
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.7fr);
+  }
+
+  .nigeria-browser__top {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .nigeria-spotlight {
+    grid-template-columns: 1fr;
+  }
+
+  .nigeria-spotlight__body {
+    padding: 0 1.35rem 1.4rem;
+  }
+
+  .nigeria-gallery-card--feature,
+  .nigeria-gallery-card--hero-secondary,
+  .nigeria-gallery-card--wide,
+  .nigeria-gallery-card--standard,
+  .nigeria-gallery-card--tall {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .nigeria-hero {
+    padding-top: 7.8rem;
+  }
+
+  .nigeria-hero__stats,
+  .nigeria-spectrum__grid,
+  .nigeria-spotlight__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .nigeria-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nigeria-gallery-card,
+  .nigeria-gallery-card--feature,
+  .nigeria-gallery-card--hero-secondary,
+  .nigeria-gallery-card--wide,
+  .nigeria-gallery-card--standard,
+  .nigeria-gallery-card--tall {
+    grid-column: span 1;
+  }
+
+  .nigeria-gallery-card--feature .nigeria-gallery-card__image,
+  .nigeria-gallery-card--hero-secondary .nigeria-gallery-card__image,
+  .nigeria-gallery-card--wide .nigeria-gallery-card__image,
+  .nigeria-gallery-card--standard .nigeria-gallery-card__image,
+  .nigeria-gallery-card--tall .nigeria-gallery-card__image {
+    aspect-ratio: 4 / 3.2;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .nigeria-hero {
+    padding: 7.2rem 0 3.35rem;
+  }
+
+  .nigeria-hero__shell,
+  .nigeria-browser__frame {
+    border-radius: 24px;
+    padding: 1.2rem;
+  }
+
+  .nigeria-hero__actions {
+    flex-direction: column;
+  }
+
+  .nigeria-hero__button {
+    width: 100%;
+  }
+
+  .nigeria-hero__media {
+    grid-template-columns: 1fr;
+  }
+
+  .nigeria-hero__stack {
+    margin-bottom: 0;
+  }
+
+  .nigeria-hero__mini-card--offset {
+    margin-left: 0;
+  }
+
+  .nigeria-spotlight__body {
+    padding: 0 1.2rem 1.2rem;
+  }
+
+  .nigeria-filter {
+    border-radius: 20px;
+  }
+
+  .nigeria-filter__button {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .nigeria-gallery__grid,
+  .nigeria-gallery__grid.projects-grid--filtered {
+    grid-template-columns: 1fr;
+  }
+}

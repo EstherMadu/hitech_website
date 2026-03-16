@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report A Case | Hitech Construction Company Limited</title>
+  <meta name="description" content="Use Hitech's report-a-case page to organize safety incidents, workplace concerns, compliance issues, and operational observations in a clear review-ready format.">
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = storedTheme || "auto";
+      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
+      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
+      document.documentElement.dataset.themePreference = theme;
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </noscript>
+  <link rel="stylesheet" href="/assets/css/vendor-style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="report-a-case">
+  <div data-include="/partials/site-header.html"></div>
+
+  <main>
+    <section class="resource-hero report-hero">
+      <div class="container">
+        <div class="resource-hero__frame">
+          <div class="resource-hero__media">
+            <img src="/assets/images/conn/home/4.JPG" alt="Aerial view of a major Hitech road corridor and surrounding community" class="resource-hero__image report-hero__image" loading="lazy" decoding="async">
+          </div>
+          <div class="resource-hero__card report-hero__card">
+            <span class="contact-card__eyebrow">Report A Case</span>
+            <h1 class="resource-hero__title">Raise A Concern With Clarity And Confidence.</h1>
+            <p class="report-hero__text">
+              Use this page to organize safety incidents, workplace grievances, compliance concerns, conduct-related observations, or project-community issues in a structured format that is easy to review internally.
+            </p>
+            <div class="resource-hero__meta">
+              <span>Confidential-ready intake format</span>
+              <span class="resource-hero__meta-divider" aria-hidden="true"></span>
+              <span>Built for operational and compliance review</span>
+              <span class="resource-hero__meta-divider" aria-hidden="true"></span>
+              <span>Frontend draft capture available now</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-overview" aria-labelledby="case-overview-title">
+      <div class="container">
+        <div class="case-overview__grid">
+          <div class="case-overview__intro">
+            <span class="contact-card__eyebrow">What belongs here</span>
+            <h2 id="case-overview-title" class="contact-card__title">Inspired by the main site, but focused on action, trust, and clarity.</h2>
+            <p class="contact-card__text">
+              This page is designed to feel consistent with the Hitech homepage while giving people a calmer, more structured place to document what happened, where it happened, who was involved, and what response may be needed.
+            </p>
+          </div>
+
+          <div class="case-overview__cards">
+            <article class="case-overview__card">
+              <span class="case-overview__card-kicker">Safety</span>
+              <h3 class="case-overview__card-title">Incident or near-miss reporting</h3>
+              <p class="case-overview__card-text">Document site events, unsafe conditions, equipment concerns, or operational breakdowns while the details are still fresh.</p>
+            </article>
+
+            <article class="case-overview__card">
+              <span class="case-overview__card-kicker">Conduct</span>
+              <h3 class="case-overview__card-title">Workplace and people concerns</h3>
+              <p class="case-overview__card-text">Capture grievances, misconduct observations, escalation notes, or matters that need respectful internal review.</p>
+            </article>
+
+            <article class="case-overview__card">
+              <span class="case-overview__card-kicker">Compliance</span>
+              <h3 class="case-overview__card-title">Project, community, and standards issues</h3>
+              <p class="case-overview__card-text">Organize reports tied to quality, environmental controls, access, disruption, or compliance-sensitive site observations.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-report-page">
+      <div class="container">
+        <div class="case-report-page__grid">
+          <div class="contact-card report-form-card">
+            <div class="contact-card__intro">
+              <span class="contact-card__eyebrow">Case details</span>
+              <h2 class="contact-card__title">Whistleblower Report Form</h2>
+              <p class="contact-card__text">
+                This version lets visitors save a draft locally in the browser, so the page remains useful on Vercel even before backend submission is connected.
+              </p>
+            </div>
+
+            <form class="contact-form report-form" data-report-form novalidate>
+              <fieldset class="report-form__section">
+                <legend class="contact-field__label">Do you want to stay anonymous or share your contact details? *</legend>
+                <div class="report-form__choice-grid">
+                  <label class="report-form__choice-card">
+                    <input type="radio" name="report_identity" value="I want to stay anonymous" checked>
+                    <span>I want to stay anonymous</span>
+                  </label>
+                  <label class="report-form__choice-card">
+                    <input type="radio" name="report_identity" value="I want to share my contact details">
+                    <span>I want to share my contact details</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <p class="contact-card__text report-form__helper">
+                If you choose to share your details, you can add them below. Leave them blank if you prefer to stay anonymous.
+              </p>
+
+              <div class="contact-form__grid report-form__contact-grid">
+                <label class="contact-field">
+                  <span class="contact-field__label">Full name</span>
+                  <input class="contact-field__input" type="text" name="full_name" autocomplete="name">
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Email address</span>
+                  <input class="contact-field__input" type="email" name="email" autocomplete="email">
+                </label>
+
+                <label class="contact-field">
+                  <span class="contact-field__label">Phone number</span>
+                  <input class="contact-field__input" type="tel" name="phone" autocomplete="tel">
+                </label>
+              </div>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">What type of concern are you reporting? *</span>
+                <select class="contact-field__input contact-field__select" name="case_category">
+                  <option value="">Select category</option>
+                  <option value="Fraud or financial misconduct">Fraud or financial misconduct</option>
+                  <option value="Safety incident or unsafe behavior">Safety incident or unsafe behavior</option>
+                  <option value="Harassment or workplace misconduct">Harassment or workplace misconduct</option>
+                  <option value="Bribery, corruption, or compliance issue">Bribery, corruption, or compliance issue</option>
+                  <option value="Environmental or community concern">Environmental or community concern</option>
+                  <option value="Other concern">Other concern</option>
+                </select>
+              </label>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">Where did this take place? *</span>
+                <input class="contact-field__input" type="text" name="project_location" placeholder="Project site, office, corridor, or location">
+              </label>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">Please describe what happened in as much detail as you can *</span>
+                <textarea class="contact-field__input contact-field__textarea" name="case_summary" rows="6" placeholder="Share the timeline, actions, context, and anything that helps explain the concern clearly."></textarea>
+              </label>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">Who was involved or who saw this? You can share names, roles or leave blank</span>
+                <textarea class="contact-field__input contact-field__textarea report-form__textarea--short" name="people_involved" rows="4" placeholder="Names, job titles, team references, witnesses, or leave blank if unknown."></textarea>
+              </label>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">Would you like an update on the outcome? *</span>
+                <select class="contact-field__input contact-field__select" name="outcome_update">
+                  <option value="">Select one</option>
+                  <option value="Yes, I would like an update">Yes, I would like an update</option>
+                  <option value="No, I do not need an update">No, I do not need an update</option>
+                </select>
+              </label>
+
+              <label class="contact-field contact-field--full">
+                <span class="contact-field__label">Is there anything else you would like to add?</span>
+                <textarea class="contact-field__input contact-field__textarea report-form__textarea--short" name="additional_notes" rows="4" placeholder="Add any final context, follow-up preference, or supporting note."></textarea>
+              </label>
+
+              <div class="contact-form__actions report-form__footer">
+                <div class="report-form__actions">
+                  <button class="btn btn-primary contact-form__submit" type="submit">Save Draft On This Device</button>
+                  <button class="btn btn-light report-form__secondary" type="button" data-report-clear>Clear Draft</button>
+                </div>
+                <p class="contact-form__note">
+                  Drafts are stored only in this browser for now. The page is ready for Vercel deployment and can later be connected to a secure submission workflow without redesigning the layout.
+                </p>
+              </div>
+            </form>
+
+            <p class="contact-form__status" data-report-status aria-live="polite"></p>
+          </div>
+
+          <aside class="contact-card contact-card--aside report-aside" aria-label="Report guidance">
+            <div class="contact-aside__section">
+              <span class="contact-card__eyebrow">How review works</span>
+              <h2 class="contact-card__title contact-card__title--aside">A calmer path from issue to action.</h2>
+              <ol class="report-aside__steps" role="list">
+                <li class="report-aside__step">
+                  <span class="report-aside__step-index">1</span>
+                  <strong>Capture the facts.</strong>
+                  <span>Focus on what happened, where it happened, and what is known right now.</span>
+                </li>
+                <li class="report-aside__step">
+                  <span class="report-aside__step-index">2</span>
+                  <strong>Clarify the risk.</strong>
+                  <span>Note whether the matter affects safety, compliance, people, delivery, or the surrounding community.</span>
+                </li>
+                <li class="report-aside__step">
+                  <span class="report-aside__step-index">3</span>
+                  <strong>Route it correctly.</strong>
+                  <span>Use the direct links below when the matter should go through a broader compliance or contact path.</span>
+                </li>
+              </ol>
+            </div>
+
+            <div class="contact-aside__section">
+              <h3 class="contact-aside__title">What makes a strong case report?</h3>
+              <ul class="report-aside__checklist" role="list">
+                <li>Use specific locations, teams, dates, and visible facts.</li>
+                <li>Separate observed events from assumptions or conclusions.</li>
+                <li>State whether the issue is ongoing, resolved, or still escalating.</li>
+                <li>Highlight any urgent safety or environmental risk clearly.</li>
+              </ul>
+            </div>
+
+            <div class="contact-aside__section contact-aside__section--accent">
+              <h3 class="contact-aside__title">Need a direct route instead?</h3>
+              <p class="contact-card__text">
+                If you need an immediate discussion or want to use an established channel first, these pages already fit the site structure.
+              </p>
+              <div class="contact-aside__links">
+                <a href="/contact/" class="contact-aside__link">Contact Us</a>
+                <a href="/about/company-compliance/" class="contact-aside__link">Company Compliance</a>
+                <a href="/about/quality-safety-and-environment/" class="contact-aside__link">Quality, Safety &amp; Environment</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cta report-cta" aria-labelledby="report-cta-title">
+      <div class="container">
+        <div class="project-cta__card">
+          <div class="row align-items-center g-4 g-xl-5 position-relative">
+            <div class="col-lg-7">
+              <div class="project-cta__content">
+                <h2 id="report-cta-title" class="project-cta__title">Need a direct conversation before writing the case?</h2>
+                <p class="project-cta__text">
+                  If the matter feels urgent, sensitive, or difficult to capture alone, move to the contact page and start with a direct message to the team.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 ms-lg-auto">
+              <a href="/contact/" class="btn btn-primary project-cta__button">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/site-footer.html"></div>
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

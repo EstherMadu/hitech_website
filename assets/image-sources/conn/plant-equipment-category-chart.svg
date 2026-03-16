@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Hitech construction plant and equipment by category type</title>
+  <desc id="desc">Horizontal bar chart showing Crusher 7, Dumper 12, Slip form Paver 10, Skid steer 13, Asphalt 15, Recycler and Paver 18, Dozer 18, Loader 20, TLB 25, Grader 27, Excavator 36, Tanker 53, Compactor 55, and Tipper 120.</desc>
+  <rect width="1200" height="860" fill="#ffffff"/>
+  <g transform="translate(84 72)">
+    <rect x="0" y="0" width="10" height="92" fill="#d92e14"/>
+    <text x="40" y="34" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">
+      Hitech operates an extensive (unencumbered) list construction plant and equipment,
+    </text>
+    <text x="40" y="74" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">
+      as summarised here per category type:
+    </text>
+  </g>
+
+  <g transform="translate(255 250)">
+    <g stroke="#d0d5dd" stroke-width="2">
+      <line x1="0" y1="-28" x2="0" y2="548"/>
+      <line x1="123" y1="-28" x2="123" y2="548"/>
+      <line x1="246" y1="-28" x2="246" y2="548"/>
+      <line x1="369" y1="-28" x2="369" y2="548"/>
+      <line x1="492" y1="-28" x2="492" y2="548"/>
+      <line x1="615" y1="-28" x2="615" y2="548"/>
+      <line x1="738" y1="-28" x2="738" y2="548"/>
+    </g>
+
+    <g fill="#8b9199" font-family="Arial, Helvetica, sans-serif" font-size="18">
+      <text x="-6" y="580">0</text>
+      <text x="108" y="580">20</text>
+      <text x="231" y="580">40</text>
+      <text x="354" y="580">60</text>
+      <text x="477" y="580">80</text>
+      <text x="593" y="580">100</text>
+      <text x="718" y="580">120</text>
+    </g>
+
+    <g fill="#8b9199" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="end">
+      <text x="-18" y="10">Crusher</text>
+      <text x="-18" y="49">Dumper</text>
+      <text x="-18" y="88">Slip form Paver</text>
+      <text x="-18" y="127">Skid steer</text>
+      <text x="-18" y="166">Asphalt</text>
+      <text x="-18" y="205">Recycler &amp; Paver</text>
+      <text x="-18" y="244">Dozer</text>
+      <text x="-18" y="283">Loader</text>
+      <text x="-18" y="322">TLB</text>
+      <text x="-18" y="361">Grader</text>
+      <text x="-18" y="400">Excavator</text>
+      <text x="-18" y="439">Tanker</text>
+      <text x="-18" y="478">Compactor</text>
+      <text x="-18" y="517">Tipper</text>
+    </g>
+
+    <g fill="#d92e14">
+      <rect x="0" y="-6" width="43" height="12" rx="2"/>
+      <rect x="0" y="33" width="74" height="12" rx="2"/>
+      <rect x="0" y="72" width="62" height="12" rx="2"/>
+      <rect x="0" y="111" width="80" height="12" rx="2"/>
+      <rect x="0" y="150" width="92" height="12" rx="2"/>
+      <rect x="0" y="189" width="111" height="12" rx="2"/>
+      <rect x="0" y="228" width="111" height="12" rx="2"/>
+      <rect x="0" y="267" width="123" height="12" rx="2"/>
+      <rect x="0" y="306" width="154" height="12" rx="2"/>
+      <rect x="0" y="345" width="166" height="12" rx="2"/>
+      <rect x="0" y="384" width="222" height="12" rx="2"/>
+      <rect x="0" y="423" width="326" height="12" rx="2"/>
+      <rect x="0" y="462" width="338" height="12" rx="2"/>
+      <rect x="0" y="501" width="738" height="12" rx="2"/>
+    </g>
+  </g>
+</svg>

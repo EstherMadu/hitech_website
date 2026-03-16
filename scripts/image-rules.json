@@ -1,0 +1,25 @@
+[
+  {
+    "pattern": "conn/home/*.JPG",
+    "operation": "jpeg",
+    "maxWidth": 1920,
+    "quality": 85
+  },
+  {
+    "pattern": "conn/*.JPG",
+    "operation": "jpeg",
+    "maxWidth": 1800,
+    "quality": 84
+  },
+  {
+    "pattern": "conn/*.jpg",
+    "operation": "jpeg",
+    "maxWidth": 1800,
+    "quality": 84
+  },
+  {
+    "pattern": "partners/*.png",
+    "operation": "png",
+    "maxLongestSide": 420
+  }
+]
