@@ -915,6 +915,92 @@ function bindGlobalEvents() {
   }
 }
 
+function buildLightbox() {
+  if (document.getElementById("site-lightbox")) {
+    return;
+  }
+
+  const lb = document.createElement("div");
+  lb.id = "site-lightbox";
+  lb.className = "site-lightbox";
+  lb.setAttribute("role", "dialog");
+  lb.setAttribute("aria-modal", "true");
+  lb.setAttribute("aria-label", "Full image viewer");
+  lb.hidden = true;
+  lb.innerHTML = `
+    <div class="site-lightbox__backdrop"></div>
+    <div class="site-lightbox__frame">
+      <button class="site-lightbox__close" type="button" aria-label="Close image viewer">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M14 4L4 14M4 4l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <img class="site-lightbox__image" src="" alt="">
+      <p class="site-lightbox__caption"></p>
+    </div>
+  `;
+
+  document.body.appendChild(lb);
+
+  lb.querySelector(".site-lightbox__backdrop").addEventListener("click", closeLightbox);
+  lb.querySelector(".site-lightbox__close").addEventListener("click", closeLightbox);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lb.hidden) {
+      closeLightbox();
+    }
+  });
+}
+
+function openLightbox(src, alt) {
+  const lb = document.getElementById("site-lightbox");
+  if (!lb) {
+    return;
+  }
+
+  const img = lb.querySelector(".site-lightbox__image");
+  const caption = lb.querySelector(".site-lightbox__caption");
+
+  img.src = src;
+  img.alt = alt || "";
+  caption.textContent = alt || "";
+  caption.hidden = !alt;
+
+  lb.hidden = false;
+  document.body.style.overflow = "hidden";
+  lb.querySelector(".site-lightbox__close").focus();
+}
+
+function closeLightbox() {
+  const lb = document.getElementById("site-lightbox");
+  if (!lb) {
+    return;
+  }
+
+  lb.hidden = true;
+  document.body.style.overflow = "";
+}
+
+function bindLightbox() {
+  buildLightbox();
+
+  // Gallery card images — open lightbox; stopPropagation keeps spotlight from also updating
+  document.querySelectorAll(".nigeria-gallery-card__image").forEach((img) => {
+    img.addEventListener("click", (event) => {
+      event.stopPropagation();
+      openLightbox(img.currentSrc || img.src, img.alt);
+    });
+  });
+
+  // Spotlight image — click to view full resolution
+  const spotlightImg = document.querySelector(".nigeria-spotlight__image");
+  if (spotlightImg) {
+    spotlightImg.addEventListener("click", () => {
+      openLightbox(spotlightImg.currentSrc || spotlightImg.src, spotlightImg.alt);
+    });
+  }
+}
+
 async function initSite() {
   await loadSharedPartials();
   cacheDom();
@@ -931,6 +1017,7 @@ async function initSite() {
   bindProjectFilters();
   bindPartnersCarousel();
   bindGlobalEvents();
+  bindLightbox();
   handleStickyHeader();
   handleBackToTopVisibility();
   applyTheme(localStorage.getItem("theme") || root.dataset.themePreference || "auto");

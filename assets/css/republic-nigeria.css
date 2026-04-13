@@ -415,19 +415,19 @@
 }
 
 .nigeria-browser__top {
-  align-items: end;
+  align-items: center;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: space-between;
-  margin-bottom: 1.85rem;
+  margin-bottom: 2rem;
 }
 
 .nigeria-spotlight {
   background: linear-gradient(135deg, #171b23 0%, #1d2630 58%, #143224 100%);
   border-radius: 26px;
   display: grid;
-  gap: 1.2rem;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   margin-bottom: 1.35rem;
   overflow: hidden;
 }
@@ -448,7 +448,7 @@
 .nigeria-spotlight__body {
   align-self: center;
   color: #ffffff;
-  padding: 1.5rem 1.5rem 1.6rem 0;
+  padding: 1.75rem 1.75rem 1.85rem 1.5rem;
 }
 
 .nigeria-spotlight__eyebrow,
@@ -485,9 +485,9 @@
 
 .nigeria-spotlight__facts {
   display: grid;
-  gap: 0.85rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 1.3rem;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.25rem;
 }
 
 .nigeria-spotlight__fact {
@@ -658,14 +658,14 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.8rem;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
 }
 
 .nigeria-gallery-card__region,
 .nigeria-gallery-card__discipline {
   border-radius: 999px;
-  padding: 0.35rem 0.58rem;
+  padding: 0.3rem 0.55rem;
 }
 
 .nigeria-gallery-card__region {
@@ -685,12 +685,35 @@
 
 .nigeria-gallery-card__title {
   color: #ffffff;
-  font-size: 1.34rem;
-  margin-bottom: 0.45rem;
+  font-size: clamp(1rem, 1.4vw, 1.34rem);
+  margin-bottom: 0.4rem;
 }
 
 .nigeria-gallery-card__text {
   color: rgba(255, 255, 255, 0.82);
+}
+
+/* Smaller cards: hide description text and tighten overlay so it reads cleanly */
+.nigeria-gallery-card--standard .nigeria-gallery-card__text,
+.nigeria-gallery-card--tall .nigeria-gallery-card__text {
+  display: none;
+}
+
+.nigeria-gallery-card--standard .nigeria-gallery-card__title,
+.nigeria-gallery-card--tall .nigeria-gallery-card__title {
+  font-size: clamp(0.92rem, 1.15vw, 1.14rem);
+  margin-bottom: 0;
+}
+
+.nigeria-gallery-card--standard .nigeria-gallery-card__meta,
+.nigeria-gallery-card--tall .nigeria-gallery-card__meta {
+  margin-bottom: 0.55rem;
+}
+
+/* Stronger gradient on standard/tall frames so short overlay text stays readable */
+.nigeria-gallery-card--standard .nigeria-gallery-card__frame::after,
+.nigeria-gallery-card--tall .nigeria-gallery-card__frame::after {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02) 30%, rgba(15, 23, 42, 0.88) 100%);
 }
 
 .nigeria-gallery-card.is-active {
@@ -797,8 +820,9 @@
   }
 
   .nigeria-browser__top {
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
+    gap: 1.25rem;
   }
 
   .nigeria-spotlight {
@@ -806,7 +830,7 @@
   }
 
   .nigeria-spotlight__body {
-    padding: 0 1.35rem 1.4rem;
+    padding: 0 1.5rem 1.5rem;
   }
 
   .nigeria-gallery-card--feature,
@@ -824,9 +848,12 @@
   }
 
   .nigeria-hero__stats,
-  .nigeria-spectrum__grid,
-  .nigeria-spotlight__facts {
+  .nigeria-spectrum__grid {
     grid-template-columns: 1fr;
+  }
+
+  .nigeria-spotlight__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .nigeria-gallery__grid {
@@ -848,6 +875,26 @@
   .nigeria-gallery-card--standard .nigeria-gallery-card__image,
   .nigeria-gallery-card--tall .nigeria-gallery-card__image {
     aspect-ratio: 4 / 3.2;
+  }
+
+  /* All cards are equal-sized here — hide description on feature/secondary too */
+  .nigeria-gallery-card--feature .nigeria-gallery-card__text,
+  .nigeria-gallery-card--hero-secondary .nigeria-gallery-card__text,
+  .nigeria-gallery-card--wide .nigeria-gallery-card__text {
+    display: none;
+  }
+
+  .nigeria-gallery-card--feature .nigeria-gallery-card__title,
+  .nigeria-gallery-card--hero-secondary .nigeria-gallery-card__title,
+  .nigeria-gallery-card--wide .nigeria-gallery-card__title {
+    font-size: clamp(0.92rem, 1.15vw, 1.14rem);
+    margin-bottom: 0;
+  }
+
+  .nigeria-gallery-card--feature .nigeria-gallery-card__meta,
+  .nigeria-gallery-card--hero-secondary .nigeria-gallery-card__meta,
+  .nigeria-gallery-card--wide .nigeria-gallery-card__meta {
+    margin-bottom: 0.55rem;
   }
 }
 
@@ -883,7 +930,7 @@
   }
 
   .nigeria-spotlight__body {
-    padding: 0 1.2rem 1.2rem;
+    padding: 0 1.2rem 1.35rem;
   }
 
   .nigeria-filter {
