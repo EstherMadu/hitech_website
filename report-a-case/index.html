@@ -5,20 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Report A Case | Hitech Construction Company Limited</title>
   <meta name="description" content="Use Hitech's report-a-case page to organize safety incidents, workplace concerns, compliance issues, and operational observations in a clear review-ready format.">
-  <script>
-    (function () {
-      const storedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = storedTheme || "auto";
-      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
-      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
-      document.documentElement.dataset.themePreference = theme;
-    }());
-  </script>
+  <script src="/assets/js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   </noscript>
@@ -179,12 +170,8 @@
 
               <div class="contact-form__actions report-form__footer">
                 <div class="report-form__actions">
-                  <button class="btn btn-primary contact-form__submit" type="submit">Save Draft On This Device</button>
-                  <button class="btn btn-light report-form__secondary" type="button" data-report-clear>Clear Draft</button>
+                  <button class="btn btn-primary contact-form__submit" type="submit">Submit</button>
                 </div>
-                <p class="contact-form__note">
-                  Drafts are stored only in this browser for now. The page is ready for Vercel deployment and can later be connected to a secure submission workflow without redesigning the layout.
-                </p>
               </div>
             </form>
 

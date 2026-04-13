@@ -11,6 +11,16 @@ return [
             // 'www.example.com',
         ],
     ],
+    'admin' => [
+        'username' => 'admin',
+        'password_hash' => '',
+        'session_name' => 'HITECHADMIN',
+    ],
+    'news' => [
+        'storage' => [
+            'file_path' => __DIR__ . '/../assets/data/news-articles.json',
+        ],
+    ],
     'newsletter' => [
         'storage' => [
             'driver' => 'file',

@@ -1,0 +1,14 @@
+# Runtime configuration — never commit real credentials
+app/config.php
+
+# Storage written at runtime
+app/storage/
+
+# Rate-limit files
+app/storage/rate-limits/
+
+# OS / editor artefacts
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp

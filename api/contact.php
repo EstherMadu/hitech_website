@@ -48,6 +48,14 @@ if (app_is_rate_limited('contact', 6, 900)) {
     app_redirect_with_status($redirectPath, 'error', 'contact');
 }
 
+if (!app_verify_public_csrf_token($_POST)) {
+    if (app_is_json_request()) {
+        app_json_response(403, ['ok' => false, 'message' => 'Invalid or missing security token. Please refresh the page and try again.']);
+    }
+
+    app_redirect_with_status($redirectPath, 'error', 'contact');
+}
+
 $honeypot = trim((string) ($_POST['company_name'] ?? ''));
 if ($honeypot !== '') {
     if (app_is_json_request()) {

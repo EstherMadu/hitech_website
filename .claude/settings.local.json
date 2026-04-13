@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where node:*)",
+      "Bash(where nodejs:*)",
+      "Bash(where python:*)",
+      "Bash(where php:*)"
+    ]
+  }
+}

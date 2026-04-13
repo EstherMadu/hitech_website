@@ -5,16 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Roadworks, Bridges, Drainage &amp; Concrete Structures | Hitech Construction Company Limited</title>
   <meta name="description" content="Explore Hitech Construction Company Limited's roadworks, bridges, drainage, and concrete structures services for planning, delivery, maintenance, and safe project execution.">
-  <script>
-    (function () {
-      const storedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const theme = storedTheme || "auto";
-      const resolvedTheme = theme === "auto" ? (prefersDark ? "dark" : "light") : theme;
-      document.documentElement.setAttribute("data-bs-theme", resolvedTheme);
-      document.documentElement.dataset.themePreference = theme;
-    }());
-  </script>
+  <script src="/assets/js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -41,7 +32,7 @@
                 <p class="service-detail-hero__promo-text">
                   Download Hitech Magazine Vol. 2 to explore our latest project stories, infrastructure expertise, and field-tested delivery methods.
                 </p>
-                <a class="service-detail-hero__promo-button" href="#" aria-label="Download Hitech Magazine Volume 2">Download Now</a>
+                <a class="service-detail-hero__promo-button" href="/contact/" aria-label="Request Hitech Magazine Volume 2">Request a Copy</a>
               </div>
             </aside>
           </div>

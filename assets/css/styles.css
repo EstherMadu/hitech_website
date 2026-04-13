@@ -323,7 +323,7 @@ h6,
   font-size: clamp(2.95rem, 4vw, 4.7rem);
   font-weight: 700;
   letter-spacing: -0.055em;
-  line-height: 0.96;
+  line-height: 1.02;
   max-width: 46rem;
   text-wrap: balance;
 }
@@ -552,6 +552,12 @@ h6,
 .service-card:focus-within {
   box-shadow: 0 18px 44px rgba(15, 23, 42, 0.12);
   transform: translateY(-4px);
+}
+
+@media (hover: none) {
+  .service-card {
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+  }
 }
 
 .service-card__media-link {
@@ -806,6 +812,13 @@ h6,
   transform: translateY(0);
 }
 
+@media (hover: none) {
+  .project-tile__meta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .partners-showcase {
   background: transparent;
   padding: 5.8rem 0 6.4rem;
@@ -895,16 +908,19 @@ h6,
 
 .partner-logo__image {
   display: block;
+  filter: grayscale(100%);
   height: auto;
   max-height: 7rem;
   max-width: 100%;
-  transition: transform 0.24s ease, opacity 0.24s ease;
+  opacity: 0.55;
+  transition: transform 0.24s ease, opacity 0.24s ease, filter 0.24s ease;
   width: auto;
 }
 
 .partner-logo:hover .partner-logo__image,
 .partner-logo:focus-within .partner-logo__image {
-  opacity: 0.95;
+  filter: grayscale(0%);
+  opacity: 1;
   transform: translateY(-3px);
 }
 
@@ -914,7 +930,7 @@ h6,
 
 .project-cta__card {
   background: linear-gradient(90deg, #1d1f26 0%, #171921 52%, #1d1f27 100%);
-  border-radius: 6px;
+  border-radius: 16px;
   color: #ffffff;
   overflow: hidden;
   padding: 4rem 3.5rem;
@@ -1093,14 +1109,14 @@ h6,
 .site-footer__social-link {
   align-items: center;
   background: rgba(255, 255, 255, 0.06);
-  border-radius: 4px;
+  border-radius: 6px;
   color: #ffffff;
   display: inline-flex;
-  height: 2rem;
+  height: 2.6rem;
   justify-content: center;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
-  width: 2rem;
+  width: 2.6rem;
 }
 
 .site-footer__social-link:hover,
@@ -1112,8 +1128,8 @@ h6,
 
 .site-footer__social-link svg {
   fill: currentColor;
-  height: 0.9rem;
-  width: 0.9rem;
+  height: 1.1rem;
+  width: 1.1rem;
 }
 
 .site-footer__bottom {
@@ -1754,7 +1770,7 @@ h6,
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  min-height: 30.8rem;
+  gap: 1.25rem;
   overflow: hidden;
   padding: 2.55rem 2.45rem 2.4rem;
   position: relative;
@@ -1789,7 +1805,7 @@ h6,
   letter-spacing: -0.03em;
   line-height: 1.16;
   margin: 0;
-  max-width: 13rem;
+  max-width: 100%;
 }
 
 .operations-card__title a {
@@ -1854,51 +1870,22 @@ h6,
   transform: translateY(-2px);
 }
 
-.operations-card__icon {
-  margin: 2.55rem 0 2.35rem;
-  width: 4.75rem;
-}
-
-.operations-card__icon--cube {
-  width: 4.55rem;
-}
-
-.operations-card__icon--stack {
-  width: 4.7rem;
-}
-
-.operations-card__icon--hex {
-  width: 4.7rem;
-}
-
-.operations-card__icon svg {
-  display: block;
-  height: auto;
-  stroke: currentColor;
-  width: 100%;
-}
 
 .operations-card__text {
   color: inherit;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 1.55;
-  margin: auto 0 0;
-  max-width: 18rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 100%;
   opacity: 1;
 }
 
-.operations-card--quality .operations-card__text {
-  max-width: 18.25rem;
-}
 
 .operations-card--dark .operations-card__text {
   color: #c4c5c7;
 }
 
-.operations-card--plant {
-  min-height: 21rem;
-}
 
 .resource-hero {
   padding: 2.8rem 0 0;
@@ -2081,7 +2068,8 @@ h6,
 }
 
 .contact-field__input:focus {
-  border-color: rgba(191, 34, 2, 0.42);
+  border-color: rgba(191, 34, 2, 0.5);
+  box-shadow: 0 0 0 3px rgba(191, 34, 2, 0.12);
   outline: none;
 }
 
@@ -3624,6 +3612,10 @@ body[data-page="company-compliance"] .resource-article__ordered {
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin: 0 0 0.85rem;
+}
+
+.recycling-roads-assurance__card--dark .recycling-roads-assurance__title {
+  color: #ffffff;
 }
 
 .recycling-roads-benefit-card__text,
@@ -5670,7 +5662,6 @@ body[data-page="company-compliance"] .resource-article__ordered {
 
   .operations-card,
   .plant-operate .operations-card {
-    min-height: 24rem;
     padding: 2rem 1.85rem 1.95rem;
   }
 
@@ -6258,11 +6249,6 @@ body[data-page="company-compliance"] .resource-article__ordered {
     max-width: 100%;
   }
 
-  .operations-card__icon {
-    margin-top: 1.9rem;
-    width: 3.7rem;
-  }
-
   .quarry-panels {
     gap: 1.25rem;
     grid-template-columns: 1fr;
@@ -6473,7 +6459,7 @@ body[data-page="company-compliance"] .resource-article__ordered {
   }
 
   .projects-filter__list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .projects-filter__button {
@@ -6820,8 +6806,16 @@ body[data-page="company-compliance"] .resource-article__ordered {
     padding-bottom: 2.6rem;
   }
 
+  .newsletter-card__form {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-card__form .newsletter-card__submit {
+    width: 100%;
+  }
+
   .project-cta__card {
-    border-radius: 5px;
+    border-radius: 12px;
     padding: 2.15rem 1.15rem;
   }
 
@@ -6881,8 +6875,8 @@ body[data-page="company-compliance"] .resource-article__ordered {
   }
 
   .site-footer__social-link {
-    height: 2.2rem;
-    width: 2.2rem;
+    height: 2.75rem;
+    width: 2.75rem;
   }
 
   .footer-language__button {

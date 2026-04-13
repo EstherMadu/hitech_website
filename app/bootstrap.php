@@ -289,15 +289,20 @@ function app_csv_contains_email(string $path, string $email): bool
     return false;
 }
 
+function app_sanitize_mail_header(string $value): string
+{
+    return str_replace(["\r", "\n", "\0"], '', $value);
+}
+
 function app_send_newsletter_notification(array $config, array $subscription): void
 {
     $newsletterConfig = $config['newsletter'] ?? [];
     $notifyEmail = trim((string) ($newsletterConfig['notify_email'] ?? ''));
-    if ($notifyEmail === '') {
+    if ($notifyEmail === '' || filter_var($notifyEmail, FILTER_VALIDATE_EMAIL) === false) {
         return;
     }
 
-    $siteName = (string) ($config['site_name'] ?? 'Website');
+    $siteName = app_sanitize_mail_header((string) ($config['site_name'] ?? 'Website'));
     $fromEmail = trim((string) ($newsletterConfig['from_email'] ?? ''));
     $headers = ['Content-Type: text/plain; charset=UTF-8'];
 
@@ -323,11 +328,11 @@ function app_send_contact_notification(array $config, array $contact): void
 {
     $contactConfig = $config['contact'] ?? [];
     $notifyEmail = trim((string) ($contactConfig['notify_email'] ?? ''));
-    if ($notifyEmail === '') {
+    if ($notifyEmail === '' || filter_var($notifyEmail, FILTER_VALIDATE_EMAIL) === false) {
         return;
     }
 
-    $siteName = (string) ($config['site_name'] ?? 'Website');
+    $siteName = app_sanitize_mail_header((string) ($config['site_name'] ?? 'Website'));
     $fromEmail = trim((string) ($contactConfig['from_email'] ?? ''));
     $headers = ['Content-Type: text/plain; charset=UTF-8'];
 
@@ -354,4 +359,155 @@ function app_send_contact_notification(array $config, array $contact): void
     ]);
 
     @mail($notifyEmail, $subject, $message, implode("\r\n", $headers));
+}
+
+function app_request_is_secure(): bool
+{
+    $https = strtolower((string) ($_SERVER['HTTPS'] ?? ''));
+    $forwardedProto = strtolower((string) ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? ''));
+    $forwardedSsl = strtolower((string) ($_SERVER['HTTP_X_FORWARDED_SSL'] ?? ''));
+
+    return $https === 'on' || $https === '1' || $forwardedProto === 'https' || $forwardedSsl === 'on';
+}
+
+function app_start_session(array $config): void
+{
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        return;
+    }
+
+    $sessionName = trim((string) ($config['admin']['session_name'] ?? 'HITECHADMIN'));
+    if ($sessionName !== '') {
+        session_name($sessionName);
+    }
+
+    $params = session_get_cookie_params();
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => $params['path'] ?? '/',
+        'domain' => $params['domain'] ?? '',
+        'secure' => app_request_is_secure(),
+        'httponly' => true,
+        'samesite' => 'Strict',
+    ]);
+
+    ini_set('session.use_strict_mode', '1');
+    ini_set('session.use_only_cookies', '1');
+
+    session_start();
+}
+
+function app_admin_is_configured(array $config): bool
+{
+    $username = trim((string) ($config['admin']['username'] ?? ''));
+    $passwordHash = trim((string) ($config['admin']['password_hash'] ?? ''));
+
+    return $username !== '' && $passwordHash !== '';
+}
+
+function app_admin_is_authenticated(): bool
+{
+    return !empty($_SESSION['admin_authenticated']) && !empty($_SESSION['admin_username']);
+}
+
+function app_admin_login(string $username): void
+{
+    session_regenerate_id(true);
+    $_SESSION['admin_authenticated'] = true;
+    $_SESSION['admin_username'] = $username;
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+function app_admin_logout(): void
+{
+    $_SESSION = [];
+
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            [
+                'expires' => time() - 3600,
+                'path' => $params['path'] ?? '/',
+                'domain' => $params['domain'] ?? '',
+                'secure' => (bool) ($params['secure'] ?? false),
+                'httponly' => (bool) ($params['httponly'] ?? true),
+                'samesite' => $params['samesite'] ?? 'Strict',
+            ]
+        );
+        session_destroy();
+    }
+}
+
+function app_csrf_token(): string
+{
+    if (!isset($_SESSION['csrf_token']) || !is_string($_SESSION['csrf_token']) || $_SESSION['csrf_token'] === '') {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+
+    return $_SESSION['csrf_token'];
+}
+
+function app_verify_csrf_token(?string $token): bool
+{
+    $expected = $_SESSION['csrf_token'] ?? '';
+
+    return is_string($expected) && $expected !== '' && is_string($token) && hash_equals($expected, $token);
+}
+
+function app_verify_public_csrf_token(array $post): bool
+{
+    $cookieName = 'csrf_pub';
+    $cookieToken = trim((string) ($_COOKIE[$cookieName] ?? ''));
+
+    if ($cookieToken === '' || strlen($cookieToken) !== 64 || !ctype_xdigit($cookieToken)) {
+        return false;
+    }
+
+    // Accept token from POST field or X-CSRF-Token header (JS fetch path).
+    $submitted = trim((string) ($post['csrf_token'] ?? $_SERVER['HTTP_X_CSRF_TOKEN'] ?? ''));
+
+    return $submitted !== '' && hash_equals($cookieToken, $submitted);
+}
+
+function app_request_json_body(): array
+{
+    $raw = file_get_contents('php://input');
+    if (!is_string($raw) || trim($raw) === '') {
+        return [];
+    }
+
+    $decoded = json_decode($raw, true);
+
+    return is_array($decoded) ? $decoded : [];
+}
+
+function app_write_json_file(string $path, array $payload): void
+{
+    $directory = dirname($path);
+    if (!is_dir($directory) && !mkdir($directory, 0775, true) && !is_dir($directory)) {
+        throw new RuntimeException('Unable to create JSON storage directory.');
+    }
+
+    $json = json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    if (!is_string($json) || $json === '') {
+        throw new RuntimeException('Unable to encode JSON payload.');
+    }
+
+    $tempPath = $path . '.tmp';
+    $backupPath = $path . '.bak';
+
+    if (file_put_contents($tempPath, $json . PHP_EOL, LOCK_EX) === false) {
+        throw new RuntimeException('Unable to write temporary JSON file.');
+    }
+
+    if (file_exists($path)) {
+        @copy($path, $backupPath);
+    }
+
+    if (!rename($tempPath, $path)) {
+        @unlink($tempPath);
+        throw new RuntimeException('Unable to move JSON file into place.');
+    }
 }

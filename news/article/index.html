@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitech News Article | Hitech Construction Company Limited</title>
+  <meta name="description" content="Read the latest Hitech project updates, company announcements, and infrastructure stories.">
+  <script src="/assets/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/vendor-style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/news.css">
+</head>
+<body data-page="news" data-news-view="article">
+  <div data-include="/partials/site-header.html"></div>
+
+  <main>
+    <section class="news-article-hero">
+      <div class="container">
+        <a href="/news/" class="news-back-link">Back to Hitech News</a>
+
+        <div class="news-article-hero__grid">
+          <div class="news-article-hero__content">
+            <p class="news-article__eyebrow" data-news-article-category>News</p>
+            <h1 class="news-article__title" data-news-article-title>Loading article...</h1>
+            <p class="news-article__summary" data-news-article-summary>
+              The latest Hitech article summary will appear here after the feed has loaded.
+            </p>
+
+            <div class="news-article__meta">
+              <span data-news-article-date>Hitech update</span>
+              <span data-news-article-read-time>5 min read</span>
+              <span data-news-article-author>Hitech Communications</span>
+              <span data-news-article-location>Nigeria</span>
+            </div>
+
+            <a href="/contact/" class="btn btn-primary news-article__cta" data-news-article-cta>Contact Hitech</a>
+          </div>
+
+          <div class="news-article-hero__media">
+            <img src="/assets/images/conn/home/4.JPG" alt="Hitech news article image" class="news-article__image" data-news-article-image loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <div class="news-state news-state--error" data-news-article-state hidden>
+          <h2 class="news-state__title">Article unavailable</h2>
+          <p class="news-state__text">The requested Hitech story could not be loaded.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-article">
+      <div class="container">
+        <div class="news-article__layout">
+          <article class="news-article__content-shell">
+            <div class="news-article__content" data-news-article-body>
+              <p>Loading article body...</p>
+            </div>
+          </article>
+
+          <aside class="news-article__aside">
+            <div class="news-article__panel">
+              <p class="news-article__aside-label">Key points</p>
+              <div data-news-article-highlights></div>
+            </div>
+
+            <div class="news-article__panel">
+              <p class="news-article__aside-label">Need more from Hitech?</p>
+              <p class="news-article__aside-copy">
+                Explore the wider Hitech site for project archives, service capabilities, and direct contact with the company team.
+              </p>
+              <a href="/contact/" class="news-story__link">Contact Hitech</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-related" aria-labelledby="news-related-title">
+      <div class="container">
+        <div class="news-section-heading">
+          <p class="news-section-heading__eyebrow">More From Hitech News</p>
+          <h2 id="news-related-title" class="news-section-heading__title">Continue reading related Hitech updates</h2>
+        </div>
+        <div class="news-card-grid" data-news-related></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/site-footer.html"></div>
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/news.js"></script>
+</body>
+</html>

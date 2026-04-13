@@ -2,6 +2,36 @@ const root = document.documentElement;
 const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+let csrfTokenCache = null;
+
+async function fetchCsrfToken() {
+  if (csrfTokenCache) {
+    return csrfTokenCache;
+  }
+
+  try {
+    const response = await fetch("/api/csrf-token.php", {
+      method: "GET",
+      credentials: "same-origin",
+      headers: { Accept: "application/json" },
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const payload = await response.json().catch(() => null);
+    if (payload && typeof payload.token === "string") {
+      csrfTokenCache = payload.token;
+      return csrfTokenCache;
+    }
+  } catch {
+    // Non-fatal: forms still submit; server-side origin check remains active.
+  }
+
+  return null;
+}
+
 const siteState = {
   themeOptions: [],
   themeIcon: null,
@@ -31,22 +61,6 @@ const siteState = {
   partnerStepSize: 0,
 };
 
-function readCachedPartial(source) {
-  try {
-    return window.sessionStorage.getItem(`partial:${source}`);
-  } catch (error) {
-    return null;
-  }
-}
-
-function writeCachedPartial(source, markup) {
-  try {
-    window.sessionStorage.setItem(`partial:${source}`, markup);
-  } catch (error) {
-    // Ignore storage quota or privacy-mode failures and continue.
-  }
-}
-
 async function loadSharedPartials() {
   const includeMounts = Array.from(document.querySelectorAll("[data-include]"));
 
@@ -58,19 +72,13 @@ async function loadSharedPartials() {
       }
 
       try {
-        const cachedMarkup = readCachedPartial(source);
-        if (cachedMarkup) {
-          mount.outerHTML = cachedMarkup;
-          return;
-        }
-
-        const response = await fetch(source, { credentials: "same-origin" });
+        // Always fetch the latest shared markup so header and footer fixes appear immediately.
+        const response = await fetch(source, { cache: "no-store", credentials: "same-origin" });
         if (!response.ok) {
           throw new Error(`Failed to load ${source}: ${response.status}`);
         }
 
         const markup = await response.text();
-        writeCachedPartial(source, markup);
         mount.outerHTML = markup;
       } catch (error) {
         console.error(error);
@@ -171,12 +179,19 @@ function bindNewsletterForms() {
       setSubscribeStatus(form, "pending", "Submitting your details...");
 
       try {
+        const csrfToken = await fetchCsrfToken();
+        const formData = new FormData(form);
+        if (csrfToken) {
+          formData.set("csrf_token", csrfToken);
+        }
+
         const response = await fetch(form.action, {
           method: form.method || "POST",
-          body: new FormData(form),
+          body: formData,
           headers: {
             Accept: "application/json",
             "X-Requested-With": "XMLHttpRequest",
+            ...(csrfToken ? { "X-CSRF-Token": csrfToken } : {}),
           },
         });
 
@@ -295,12 +310,19 @@ function bindContactForms() {
       setContactStatus(form, "pending", "Sending your inquiry...");
 
       try {
+        const csrfToken = await fetchCsrfToken();
+        const formData = new FormData(form);
+        if (csrfToken) {
+          formData.set("csrf_token", csrfToken);
+        }
+
         const response = await fetch(form.action, {
           method: form.method || "POST",
-          body: new FormData(form),
+          body: formData,
           headers: {
             Accept: "application/json",
             "X-Requested-With": "XMLHttpRequest",
+            ...(csrfToken ? { "X-CSRF-Token": csrfToken } : {}),
           },
         });
 
@@ -425,7 +447,7 @@ function bindReportForms() {
           }
         });
 
-        setReportStatus(form, "success", "Saved draft restored on this device.");
+        setReportStatus(form, "success", "Your saved form details were restored on this device.");
       } catch (error) {
         setReportStatus(form, "error", "We found a saved draft, but it could not be restored.");
       }
@@ -441,7 +463,7 @@ function bindReportForms() {
 
       try {
         localStorage.setItem(storageKey, JSON.stringify(payload));
-        setReportStatus(form, "success", "Draft saved on this device. You can return and continue editing later.");
+        setReportStatus(form, "success", "Your submission has been saved on this device for now.");
       } catch (error) {
         setReportStatus(form, "error", "We could not save the draft in this browser.");
       }
@@ -698,8 +720,9 @@ function updateGallerySpotlight(card, scrollIntoView = false) {
   }
 
   if (siteState.gallerySpotlightLink) {
-    if (link) {
-      siteState.gallerySpotlightLink.href = link;
+    const safeLink = link && /^(\/|https:\/\/)/.test(link) ? link : "";
+    if (safeLink) {
+      siteState.gallerySpotlightLink.href = safeLink;
       siteState.gallerySpotlightLink.hidden = false;
     } else {
       siteState.gallerySpotlightLink.hidden = true;

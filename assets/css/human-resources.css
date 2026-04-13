@@ -754,7 +754,7 @@
   }
 
   .hr-workforce-chart__bars {
-    gap: 1rem;
+    gap: 1.1rem;
     grid-template-columns: 1fr;
     height: auto;
     min-height: 0;
@@ -762,8 +762,8 @@
 
   .hr-workforce-chart__item {
     align-items: center;
-    gap: 0.45rem 0.8rem;
-    grid-template-columns: minmax(0, 8.3rem) 1fr;
+    gap: 0.35rem 0.75rem;
+    grid-template-columns: minmax(0, 9rem) 1fr;
     grid-template-rows: auto auto;
     height: auto;
   }
@@ -773,8 +773,11 @@
     border-radius: 999px;
     grid-column: 2;
     grid-row: 1 / span 2;
-    height: 1.15rem;
+    height: 1.5rem;
+    justify-content: flex-start;
     min-height: 0;
+    overflow: visible;
+    position: relative;
     width: 100%;
   }
 
@@ -782,7 +785,10 @@
     border-radius: 999px;
     height: 100%;
     justify-content: flex-end;
-    padding: 0.15rem 0.5rem;
+    min-width: 3rem;
+    overflow: visible;
+    padding: 0;
+    position: relative;
     width: var(--bar-size);
   }
 
@@ -799,7 +805,13 @@
   }
 
   .hr-workforce-chart__value {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
   }
 
   [data-bs-theme="dark"] .hr-workforce-chart__bar-track {
